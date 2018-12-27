@@ -6,4 +6,5 @@
 
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorDefault">#757575</color>
+    <color name="colorDivider">#d6d5cf</color>
 </resources>

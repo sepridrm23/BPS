@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/splash"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="20dp">
 
     <ProgressBar
         android:id="@+id/progresBar"
@@ -19,7 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
         <ImageView
             android:id="@+id/imgLogo"
@@ -28,6 +30,20 @@
             android:layout_gravity="center"
             android:src="@drawable/logo_bps"
             tools:ignore="ContentDescription" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data Statistik Sektoral Pemerintah"
+            android:layout_marginTop="20dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kabupaten Muara Enim"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
     </LinearLayout>
 
     <TextView

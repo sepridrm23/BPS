@@ -1,3 +1,108 @@
 <resources>
     <string name="app_name">Muara Enim dalam Angka</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="informasi_umum">\nBadan Pusat Statistik adalah Lembaga Pemerintah Non-Departemen yang bertanggung jawab langsung kepada Presiden. Sebelumnya, BPS merupakan Biro Pusat Statistik, yang dibentuk berdasarkan UU Nomor 6 Tahun 1960 tentang Sensus dan UU Nomer 7 Tahun 1960 tentang Statistik. Sebagai pengganti kedua UU tersebut ditetapkan UU Nomor 16 Tahun 1997 tentang Statistik. Berdasarkan UU ini yang ditindaklanjuti dengan peraturan perundangan dibawahnya, secara formal nama Biro Pusat Statistik diganti menjadi Badan Pusat Statistik.\n\n
+Materi yang merupakan muatan baru dalam UU Nomor 16 Tahun 1997, antara lain :\n\n
+- Jenis statistik berdasarkan tujuan pemanfaatannya terdiri atas statistik dasar yang sepenuhnya diselenggarakan oleh BPS, statistik sektoral yang dilaksanakan oleh instansi Pemerintah secara mandiri atau bersama dengan BPS, serta statistik khusus yang diselenggarakan oleh lembaga, organisasi, perorangan, dan atau unsur masyarakat lainnya secara mandiri atau bersama dengan BPS.\n
+- Hasil statistik yang diselenggarakan oleh BPS diumumkan dalam Berita Resmi Statistik (BRS) secara teratur dan transparan agar masyarakat dengan mudah mengetahui dan atau mendapatkan data yang diperlukan.\n
+- Sistem Statistik Nasional yang andal, efektif, dan efisien.\n
+- Dibentuknya Forum Masyarakat Statistik sebagai wadah untuk menampung aspirasi masyarakat statistik, yang bertugas memberikan saran dan pertimbangan kepada BPS.\n\n
+Berdasarkan undang-undang yang telah disebutkan di atas, peranan yang harus dijalankan oleh BPS adalah sebagai berikut :\n\n
+- Menyediakan kebutuhan data bagi pemerintah dan masyarakat. Data ini didapatkan dari sensus atau survey yang dilakukan sendiri dan juga dari departemen atau lembaga pemerintahan lainnya sebagai data sekunder\n
+- Membantu kegiatan statistik di departemen, lembaga pemerintah atau institusi lainnya, dalam membangun sistem perstatistikan nasional.\n
+- Mengembangkan dan mempromosikan standar teknik dan metodologi statistik, dan menyediakan pelayanan pada bidang pendidikan dan pelatihan statistik.\n
+- Membangun kerjasama dengan institusi internasional dan negara lain untuk kepentingan perkembangan statistik Indonesia.\n</string>
+    <string name="visi_misi">\nVisi\n
+Pelopor data statistik terpercaya untuk semua\n\n
+Misi\n
+1. Memperkuat landasan konstitusional dan operasional lembaga statistik untuk penyelenggaraan statistik yang efektif dan efisien.\n
+2. Menciptakan insan statistik yang kompeten dan profesional, didukung pemanfaatan teknologi informasi mutakhir untuk kemajuan perstatistikan Indonesia.\n
+3. Meningkatkan penerapan standar klasifikasi, konsep dan definisi, pengukuran, dan kode etik statistik yang bersifat universal dalam setiap penyelenggaraan statistik.\n
+4. Meningkatkan kualitas pelayanan informasi statistik bagi semua pihak.\n
+5. Meningkatkan koordinasi, integrasi, dan sinkronisasi kegiatan statistik yang diselenggarakan pemerintah dan swasta, dalam kerangka Sistem Statistik Nasional (SSN) yang efektif dan efisien.\n\n
+Nilai-Nilai Inti\n
+Core values (nilai–nilai inti) BPS merupakan pondasi yang kokoh untuk membangun jati diri dan penuntun perilaku setiap insan BPS dalam melaksanakan tugas.\n\n
+Nilai-nilai Inti BPS terdiri dari:\n\n
+1. PROFESIONAL\n
+a. Kompeten\n
+        Mempunyai keahlian dalam bidang tugas yang diemban\n
+b. Efektif\n
+        Memberikan hasil maksimal\n
+c. Efisien\n
+        Mengerjakan setiap tugas secara produktif, dengan sumber daya minimal\n
+d. Inovatif\n
+        Selalu melaukan permbaruan dan/atau penyempurnaan melalui proses pembelajaran diri secara terus menerus\n
+e. Sistemik\n
+        Meyakini bahwa setiap pekerjaan mempunyai tata urutan proses perkerjaan yang satu menjadi bagian tidak terpisahkan dari  pekerjaan yang lain.\n\n
+2. INTEGRITAS\n
+a. Dedikasi\n
+        Memiliki pengabdian yang tinggi terhadap profesi yang diemban dan institusi\n
+b. Disiplin\n
+        Melaksanakan pekerjaan sesuai dengan ketentuan yang telah ditetapkan\n
+c. Konsisten\n
+        Satunya kata dengan perbuatan\n
+d. Terbuka\n
+        Menghargai ide, saran, pendapat, masukan, dan kritik dari berbagai pihak\n
+e. Akuntabel\n
+        Bertanggung jawab dan setiap langkahnya terukur\n\n
+3. AMANAH\n
+a. Terpercaya\n
+        Melaksanakan pekerjaan sesuai dengan ketentuan, yang tidak hanya didasarkan pada logika tetapi juga sekaligus menyentuh dimensi mental spiritual\n
+b. Jujur\n
+        Melaksanakan semua pekerjaan dengan tidak menyimpang dari prinsip moralitas\n
+c. Tulus\n
+        Melaksanakan tugas tanpa pamrih, menghindari konflik kepentingan (pribadi, kelompok, dan golongan), serta mendedikasikan semua tugas untuk perlindungan kehidupan manusia, sebagai amal ibadah atau perbuatan untuk Tuhan Yang Maha Esa\n
+d. Adil\n
+        Menempatkan sesuatu secara berkeadilan dan memberikan haknya\n</string>
+    <string name="struktur_organisasi">\nDeskripsi\n\n
+Berdasarkan Peraturan Presiden Nomor 86 Tahun 2007 tentang Badan Pusat Statistik dan Peraturan Kepala Badan Pusat Statistik Nomor 7 Tahun 2008 tentang Organisasi dan Tata Kerja Badan Pusat Statistik. Susunan organisasi BPS terdiri dari:\n\n
+1. Kepala;\n
+2. Sekretariat Utama;\n
+3. Deputi Bidang Metodologi dan Informasi Statistik;\n
+4. Deputi Bidang Statistik Sosial;\n
+5. Deputi Bidang Statistik Produksi;\n
+6. Deputi Bidang Statistik Distribusi dan Jasa;\n
+7. Deputi Bidang Neraca dan Analisis Statistik;\n
+8. Inspektorat Utama;\n
+9. Pusat Pendidikan dan Pelatihan;\n
+10. Instansi Vertikal\n\n
+BPS dipimpin oleh seorang Kepala yang mempunyai tugas memimpin BPS sesuai dengan ketentuan peraturan perundang-undangan yang berlaku; menyiapkan kebijakan nasional dan kebijakan umum sesuai dengan tugas BPS; menetapkan kebijakan teknis pelaksanaan tugas BPS yang menjadi tanggung jawabnya; serta membina dan melaksanakan kerja sama dengan instansi dan organisasi lain. Kepala dibantu oleh seorang Sekretaris Utama, 5 (lima) Deputi dan Inspektorat Utama.\n
+Sekretariat Utama mempunyai tugas mengkoordinasikan perencanaan, pembinaan, pengendalian administrasi, dan sumber daya di lingkungan BPS. Sekretariat Utama terdiri dari beberapa Biro, setiap Biro terdiri dari beberapa Bagian dan setiap Bagian terdiri dari beberapa Subbagian. Sekretariat Utama terdiri dari Biro Bina Program, Biro Keuangan, Biro Kepegawaian, Biro Hubungan Masyarakat dan Hukum, dan Biro Umum.\n
+Deputi Bidang Metodologi dan Informasi Statistik mempunyai tugas melaksanakan perumusan dan pelaksanaan kebijakan di bidang metodologi dan informasi statistik. Deputi Bidang Metodologi dan Informasi Statistik terdiri dari Direktorat Pengembangan Metodologi Sensus dan Survei, Direktorat Diseminasi Statistik, dan Direktorat Sistim Informasi Statistik.\n
+Deputi Bidang Statistik Sosial mempunyai tugas melaksanakan perumusan dan pelaksanaan kebijakan di bidang statistik sosial. Deputi Bidang Statistik Sosial terdiri dari Direktorat Statistik Kependudukan dan Ketenagakerjaan, Direktorat Statistik Kesejahteraan Rakyat, dan Direktorat Statistik Ketahanan Sosial.\n
+Deputi Bidang Statistik Produksi mempunyai tugas melaksanakan perumusan dan pelaksanaan kebijakan di bidang statistik produksi. Deputi Bidang Statistik Produksi terdiri dari Direktorat Statistik Tanaman Pangan, Hortikultura dan Perkebunan, Direktorat Peternakan, Perikanan dan Kehutanan dan Direktorat Statistik Industri.\n
+Deputi Bidang Statistik Distribusi dan Jasa mempunyai tugas melaksanakan perumusan dan pelaksanaan kebijakan di bidang statistik distribusi dan jasa. Deputi Bidang Statistik Distribusi dan Jasa terdiri dari Direktorat Statistik Harga, Direktorat Statistik Distribusi, dan Direktorat Statistik Keuangan, TI dan Pariwisata.\n
+Deputi Bidang Neraca dan Analisis Statistik mempunyai tugas melaksanakan perumusan dan melaksanakan kebijakan di bidang neraca dan analisis statistik. Deputi Bidang Neraca dan Analisis Statistik terdiri dari Direktorat Neraca Produksi, Direktorat Neraca Pengeluaran, dan Direktorat Analisis dan Pengembangan Statistik.\n
+Inspektorat Utama yang mempunyai tugas melaksanakan pengawasan fungsional terhadap pelaksanaan tugas di lingkungan BPS;\n
+Pusat Pendidikan dan Pelatihan (Pusdiklat) yang mempunyai tugas melaksanakan penyelenggaraan pendidikan dan pelatihan prajabatan dan kepemimpinan serta teknis dan fungsional.\n
+Instansi Vertikal BPS terdiri dari BPS Provinsi dan BPS Kabupaten/Kota.\n
+BPS Provinsi adalah instansi vertikal BPS yang berada di bawah dan bertanggung jawab kepada Kepala BPS.\n
+BPS Kabupaten/Kota adalah instansi vertikal BPS yang berada di bawah dan bertanggung jawab kepada Kepala BPS Provinsi.\n
+Disamping itu terdapat Sekolah Tinggi Ilmu Statistik (STIS) yang pembentukannya berlandaskan pada Keputusan Presiden Nomor 163 tahun 1998 tentang Sekolah Tinggi Ilmu Statistik sebagai perguruan tinggi kedinasan di lingkungan Badan Pusat Statistik yang berkedudukan di Jakarta. Struktur organisasi Sekolah Tinggi Ilmu Statistik didasarkan pada Keputusan Kepala BPS Nomor 101 tahun 1998 tentang Organisasi dan Tata Kerja Sekolah Tinggi Ilmu Statistik. Sekolah Tinggi Ilmu Statistik dipimpin oleh seorang Ketua.\n</string>
+    <string name="tugas_fungsi_kewenangan">\nTugas, fungsi dan kewenangan BPS telah ditetapkan berdasarkan Peraturan Presiden Nomor 86 Tahun 2007 tentang Badan Pusat Statistik dan Peraturan Kepala Badan Pusat Statistik Nomor 7 Tahun 2008 tentang Organisasi dan Tata Kerja Badan Pusat Statistik.\n\n
+1. Tugas\n
+        Melaksanakan tugas pemerintahan dibidang statistik sesuai peraturan perundang-undangan.\n\n
+2. Fungsi\n
+a. Pengkajian, penyusunan dan perumusan kebijakan dibidang statistik;\n
+b. Pengkoordinasian kegiatan statistik nasional dan regional;\n
+c. Penetapan dan penyelenggaraan statistik dasar;\n
+d. Penetapan sistem statistik nasional;\n
+e. Pembinaan dan fasilitasi terhadap kegiatan instansi pemerintah dibidang kegiatan statistik; dan\n
+f. Penyelenggaraan pembinaan dan pelayanan administrasi umum dibidang perencanaan umum, ketatausahaan, organisasi dan tatalaksana, kepegawaian, keuangan, kearsipan, kehumasan, hukum, perlengkapan dan rumah tangga.\n\n
+3. Kewenangan\n
+a. Penyusunan rencana nasional secara makro di bidangnya;\n
+b. Perumusan kebijakan di bidangnya untuk mendukung pembangunan secara makro;\n
+c. Penetapan sistem informasi di bidangnya;\n
+d. Penetapan dan penyelenggaraan statistik nasional;\n
+e. Kewenangan lain sesuai dengan ketentuan peraturan perundang-undangan yang berlaku, yaitu;\n
+f. i. Perumusan dan pelaksanaan kebijakan tertentu di bidang kegiatan statistik;\n
+  ii. Penyusun pedoman penyelenggaraan survei statistik sektoral.\n</string>
+    <string name="pengolahan_data">\nTahap pengolahan data sangat menentukan seberapa jauh tingkat keakuratan dan ketepatan data statistik yang dihasilkan. BPS merupakan instansi perintis dalam penggunaan komputer karena telah memulai menggunakannya sejak sekitar 1960. Sebelum menggunakan komputer, BPS menggunakan kalkulator dan alat hitung sipoa dalam mengolah data.\n
+Teknologi komputer yang diterapkan di BPS selalu disesuaikan dengan perkembangan teknologi informasi dan juga mengacu kepada kebutuhan. Personal komputer yang secara umum lebih murah dan efisien telah dicoba digunakan untuk menggantikan mainframe. Sejak 1980-an, personal komputer telah digunakan di seluruh kantor BPS provinsi, diikuti dengan penggunaan komputer di seluruh BPS kabupaten dan kota sejak 1992.\n
+Dengan menggunakan personal komputer, kantor statistik di daerah dapat segera memproses pengolahan data, yang merupakan rangkaian kegiatan yang dimulai dari pengumpulan data, kemudian memasukkan data mentah ke dalam komputer dan selanjutnya data tersebut dikirim ke BPS pusat untuk diolah menjadi data nasional.\n
+Pengolahan data menggunakan personal komputer telah lama menjadi contoh pengolahan yang diterapkan oleh direktorat teknis di BPS pusat, terutama jika direktorat tersebut harus mempublikasikan hasil yang diperoleh dari survei yang diselenggarakan.\n
+Pengolahan data Sensus Penduduk tahun 2000 telah menggunakan mesin scanner, tujuannya untuk mempercepat kegiatan pengolahan data. Efek positif dari penggunaan komputer oleh direktorat teknis yaitu selain lebih cepat, juga dapat memotivasi pegawai yang terlibat turut bertanggung jawab untuk menghasilkan sebanyak mungkin data statistik dan indikator secara tepat waktu dan akurat dibanding sebelumnya. Selain itu, penggunaan computer sangat mendukung BPS dalam menghasilkan berbagai data statistik dan indikator-indikator yang rumit seperti kemiskinan, Input-Output (I-O) table, Social Accounting Matrix (SAM), dan berbagai macam indeks komposit dalam waktu yang relatif singkat.\n
+Pada 1993, BPS mulai mengembangkan sebuah sistem informasi statistik secara geografis khususnya untuk pengolahan data wilayah sampai unit administrasi yang terkecil yang telah mulai dibuat secara manual sejak 1970. Data wilayah ini dibuat khususnya untuk menyajikan karakteristik daerah yang menonjol yang diperlukan oleh para perumus kebijakan dalam perencanaan pembangunan.\n
+Dalam mengolah data, BPS juga telah mengembangkan berbagai program aplikasi untuk data entry, editing, validasi, tabulasi dan analisis dengan menggunakan berbagai macam bahasa dan paket komputer. BPS bertanggung jawab untuk mengembangkan berbagai perangkat lunak komputer serta mentransfer pengetahuan dan keahliannya kepada staf BPS daerah.\n
+Pembangunan infrastruktur teknologi informasi di BPS didasarkan pada tujuan yang ingin dicapai yaitu mengikuti perkembangan permintaan dan kebutuhan dalam pengolahan data statistik; melakukan pembaharuan/inovasi dalam hal metode kerja yang lebih baik serta memberikan kemudahan kepada publik dalam mendapatkan informasi statistik.\n</string>
 </resources>
