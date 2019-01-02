@@ -1,375 +1,389 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:src="@drawable/bupatiwakilbupati"
-        android:scaleType="fitXY" />
-
-    <GridLayout
+    android:layout_height="match_parent">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="15dp"
-        android:columnCount="3"
-        android:rowCount="3"
-        android:alignmentMode="alignMargins"
-        android:columnOrderPreserved="false"
-        android:background="@drawable/bg">
+        android:orientation="vertical">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view_sosial"
+        <ImageView
+            android:id="@+id/image_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginBottom="7dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            tools:ignore="UnusedAttribute">
+            android:src="@drawable/bupatiwakilbupati"
+            android:scaleType="fitXY" />
 
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg"
+            android:id="@+id/recycler_view"
+            android:scrollbars="vertical"
+            android:padding="10dp">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
 
-                <ImageView
-                    android:src="@drawable/ic_social"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"/>
+<!--<GridLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:padding="15dp"-->
+<!--android:columnCount="3"-->
+<!--android:rowCount="3"-->
+<!--android:alignmentMode="alignMargins"-->
+<!--android:columnOrderPreserved="false"-->
+<!--android:background="@drawable/bg">-->
 
-                <TextView
-                    android:text="Sosial Kependudukan"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+<!--<android.support.v7.widget.CardView-->
+    <!--android:id="@+id/card_view_sosial"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_columnWeight="1"-->
+    <!--android:layout_rowWeight="1"-->
+    <!--android:layout_marginBottom="7dp"-->
+    <!--android:layout_marginLeft="7dp"-->
+    <!--android:layout_marginRight="7dp"-->
+    <!--app:cardElevation="8dp"-->
+    <!--app:cardCornerRadius="8dp"-->
+    <!--tools:ignore="UnusedAttribute">-->
 
-            </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_gravity="center_horizontal|center_vertical"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
 
-        </android.support.v7.widget.CardView>
+        <!--<ImageView-->
+            <!--android:src="@drawable/ic_social"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="1"/>-->
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view_ekonomi"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginBottom="7dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            tools:ignore="UnusedAttribute">
+        <!--<TextView-->
+            <!--android:text="Sosial Kependudukan"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+    <!--</LinearLayout>-->
 
-                <ImageView
-                    android:src="@drawable/ic_ekonomi"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"/>
+<!--</android.support.v7.widget.CardView>-->
 
-                <TextView
-                    android:text="Ekonomi Perdagangan"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+<!--<android.support.v7.widget.CardView-->
+    <!--android:id="@+id/card_view_ekonomi"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_columnWeight="1"-->
+    <!--android:layout_rowWeight="1"-->
+    <!--android:layout_marginBottom="7dp"-->
+    <!--android:layout_marginLeft="7dp"-->
+    <!--android:layout_marginRight="7dp"-->
+    <!--app:cardElevation="8dp"-->
+    <!--app:cardCornerRadius="8dp"-->
+    <!--tools:ignore="UnusedAttribute">-->
 
-            </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_gravity="center_horizontal|center_vertical"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
 
-        </android.support.v7.widget.CardView>
+        <!--<ImageView-->
+            <!--android:src="@drawable/ic_ekonomi"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="1"/>-->
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view_pertanian"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginBottom="7dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            tools:ignore="UnusedAttribute">
+        <!--<TextView-->
+            <!--android:text="Ekonomi Perdagangan"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+    <!--</LinearLayout>-->
 
-                <ImageView
-                    android:src="@drawable/ic_pertanian"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"/>
+<!--</android.support.v7.widget.CardView>-->
 
-                <TextView
-                    android:text="Pertanian Pertambangan"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+<!--<android.support.v7.widget.CardView-->
+    <!--android:id="@+id/card_view_pertanian"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_columnWeight="1"-->
+    <!--android:layout_rowWeight="1"-->
+    <!--android:layout_marginBottom="7dp"-->
+    <!--android:layout_marginLeft="7dp"-->
+    <!--android:layout_marginRight="7dp"-->
+    <!--app:cardElevation="8dp"-->
+    <!--app:cardCornerRadius="8dp"-->
+    <!--tools:ignore="UnusedAttribute">-->
 
-            </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_gravity="center_horizontal|center_vertical"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
 
-        </android.support.v7.widget.CardView>
+        <!--<ImageView-->
+            <!--android:src="@drawable/ic_pertanian"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="1"/>-->
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view_indikator"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginBottom="7dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            tools:ignore="UnusedAttribute">
+        <!--<TextView-->
+            <!--android:text="Pertanian Pertambangan"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+    <!--</LinearLayout>-->
 
-                <ImageView
-                    android:src="@drawable/ic_indikator"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"/>
+<!--</android.support.v7.widget.CardView>-->
 
-                <TextView
-                    android:text="Indikator Strategis"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+<!--<android.support.v7.widget.CardView-->
+    <!--android:id="@+id/card_view_indikator"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_columnWeight="1"-->
+    <!--android:layout_rowWeight="1"-->
+    <!--android:layout_marginBottom="7dp"-->
+    <!--android:layout_marginLeft="7dp"-->
+    <!--android:layout_marginRight="7dp"-->
+    <!--app:cardElevation="8dp"-->
+    <!--app:cardCornerRadius="8dp"-->
+    <!--tools:ignore="UnusedAttribute">-->
 
-            </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_gravity="center_horizontal|center_vertical"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
 
-        </android.support.v7.widget.CardView>
+        <!--<ImageView-->
+            <!--android:src="@drawable/ic_indikator"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="1"/>-->
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view_publikasi"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginBottom="7dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            tools:ignore="UnusedAttribute">
+        <!--<TextView-->
+            <!--android:text="Indikator Strategis"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+    <!--</LinearLayout>-->
 
-                <ImageView
-                    android:src="@drawable/ic_publikasi"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"/>
+<!--</android.support.v7.widget.CardView>-->
 
-                <TextView
-                    android:text="Publikasi Statistik"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+<!--<android.support.v7.widget.CardView-->
+    <!--android:id="@+id/card_view_publikasi"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_columnWeight="1"-->
+    <!--android:layout_rowWeight="1"-->
+    <!--android:layout_marginBottom="7dp"-->
+    <!--android:layout_marginLeft="7dp"-->
+    <!--android:layout_marginRight="7dp"-->
+    <!--app:cardElevation="8dp"-->
+    <!--app:cardCornerRadius="8dp"-->
+    <!--tools:ignore="UnusedAttribute">-->
 
-            </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_gravity="center_horizontal|center_vertical"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
 
-        </android.support.v7.widget.CardView>
+        <!--<ImageView-->
+            <!--android:src="@drawable/ic_publikasi"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="1"/>-->
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view_berita_statistik"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginBottom="7dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            tools:ignore="UnusedAttribute">
+        <!--<TextView-->
+            <!--android:text="Publikasi Statistik"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+    <!--</LinearLayout>-->
 
-                <ImageView
-                    android:src="@drawable/ic_berita_resmi"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"/>
+<!--</android.support.v7.widget.CardView>-->
 
-                <TextView
-                    android:text="Berita Resmi Statistik"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+<!--<android.support.v7.widget.CardView-->
+    <!--android:id="@+id/card_view_berita_statistik"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_columnWeight="1"-->
+    <!--android:layout_rowWeight="1"-->
+    <!--android:layout_marginBottom="7dp"-->
+    <!--android:layout_marginLeft="7dp"-->
+    <!--android:layout_marginRight="7dp"-->
+    <!--app:cardElevation="8dp"-->
+    <!--app:cardCornerRadius="8dp"-->
+    <!--tools:ignore="UnusedAttribute">-->
 
-            </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_gravity="center_horizontal|center_vertical"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
 
-        </android.support.v7.widget.CardView>
+        <!--<ImageView-->
+            <!--android:src="@drawable/ic_berita_resmi"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="1"/>-->
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view_berita"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginBottom="7dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
-            app:cardElevation="3dp"
-            app:cardCornerRadius="8dp"
-            tools:ignore="UnusedAttribute">
+        <!--<TextView-->
+            <!--android:text="Berita Resmi Statistik"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+    <!--</LinearLayout>-->
 
-                <ImageView
-                    android:src="@drawable/ic_berita_resmi"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"/>
+<!--</android.support.v7.widget.CardView>-->
 
-                <TextView
-                    android:text="Berita"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+<!--<android.support.v7.widget.CardView-->
+    <!--android:id="@+id/card_view_berita"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_columnWeight="1"-->
+    <!--android:layout_rowWeight="1"-->
+    <!--android:layout_marginBottom="7dp"-->
+    <!--android:layout_marginLeft="7dp"-->
+    <!--android:layout_marginRight="7dp"-->
+    <!--app:cardElevation="3dp"-->
+    <!--app:cardCornerRadius="8dp"-->
+    <!--tools:ignore="UnusedAttribute">-->
 
-            </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_gravity="center_horizontal|center_vertical"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
 
-        </android.support.v7.widget.CardView>
+        <!--<ImageView-->
+            <!--android:src="@drawable/ic_berita_resmi"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="1"/>-->
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view_kontak"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginBottom="7dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
-            app:cardElevation="3dp"
-            app:cardCornerRadius="8dp"
-            tools:ignore="UnusedAttribute">
+        <!--<TextView-->
+            <!--android:text="Berita"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+    <!--</LinearLayout>-->
 
-                <ImageView
-                    android:src="@drawable/ic_kontak"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"/>
+<!--</android.support.v7.widget.CardView>-->
 
-                <TextView
-                    android:text="Kontak"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+<!--<android.support.v7.widget.CardView-->
+    <!--android:id="@+id/card_view_kontak"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_columnWeight="1"-->
+    <!--android:layout_rowWeight="1"-->
+    <!--android:layout_marginBottom="7dp"-->
+    <!--android:layout_marginLeft="7dp"-->
+    <!--android:layout_marginRight="7dp"-->
+    <!--app:cardElevation="3dp"-->
+    <!--app:cardCornerRadius="8dp"-->
+    <!--tools:ignore="UnusedAttribute">-->
 
-            </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_gravity="center_horizontal|center_vertical"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
 
-        </android.support.v7.widget.CardView>
+        <!--<ImageView-->
+            <!--android:src="@drawable/ic_kontak"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="1"/>-->
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view_tentang"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginBottom="7dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
-            app:cardElevation="3dp"
-            app:cardCornerRadius="8dp"
-            tools:ignore="UnusedAttribute">
+        <!--<TextView-->
+            <!--android:text="Kontak"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="10dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+    <!--</LinearLayout>-->
 
-                <ImageView
-                    android:src="@drawable/ic_tentang"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"/>
+<!--</android.support.v7.widget.CardView>-->
 
-                <TextView
-                    android:text="Tentang Kami"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-    </GridLayout>
-</LinearLayout>
+<!--<android.support.v7.widget.CardView-->
+    <!--android:id="@+id/card_view_tentang"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_columnWeight="1"-->
+    <!--android:layout_rowWeight="1"-->
+    <!--android:layout_marginBottom="7dp"-->
+    <!--android:layout_marginLeft="7dp"-->
+    <!--android:layout_marginRight="7dp"-->
+    <!--app:cardElevation="3dp"-->
+    <!--app:cardCornerRadius="8dp"-->
+    <!--tools:ignore="UnusedAttribute">-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_gravity="center_horizontal|center_vertical"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<ImageView-->
+            <!--android:src="@drawable/ic_tentang"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="1"/>-->
+
+        <!--<TextView-->
+            <!--android:text="Tentang Kami"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
+    <!--</LinearLayout>-->
+<!--</android.support.v7.widget.CardView>-->
+<!--</GridLayout>-->
