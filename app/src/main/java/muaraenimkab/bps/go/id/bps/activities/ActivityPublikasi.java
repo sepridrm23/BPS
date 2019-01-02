@@ -1,9 +1,7 @@
-package muaraenimkab.bps.go.id.bps;
+package muaraenimkab.bps.go.id.bps.activities;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,7 +10,11 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class ActivityBeritaResmi extends AppCompatActivity {
+import muaraenimkab.bps.go.id.bps.models.Models;
+import muaraenimkab.bps.go.id.bps.adapters.PublikasiViewAdapter;
+import muaraenimkab.bps.go.id.bps.R;
+
+public class ActivityPublikasi extends AppCompatActivity {
     RecyclerView rView;
     LinearLayoutManager linearLayoutManager;
     ArrayList<Models> aList;
@@ -21,16 +23,16 @@ public class ActivityBeritaResmi extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_berita);
+        setContentView(R.layout.activity_publikasi);
         rView = findViewById(R.id.recycler_view);
 
-        ActivityBeritaResmi.this.setTitle("Berita Resmi Statistik");
+        ActivityPublikasi.this.setTitle("Publikasi Statistik");
         data = new Models[]{
-                new Models("Perkembangan Ekspor dan Impor Kabupaten Muara Enim"),
-                new Models("Hasil Pendapatan Potensi Desa 2018 Kabupaten Muara Enim"),
-                new Models("Keadaan Ketenagakerjaan Kabupaten Muara Enim"),
-                new Models("Indeks Tendensi Konsumen Triwulan III-2018"),
-                new Models("Luas Panen dan Produksi Padi Kabupaten Muara Enim 2018"),
+                new Models("Indikator Penting Kabupaten Muara Enim\nISSN : 2477-4472"),
+                new Models("Indeks Tendensi Konsumen Kabupaten Muara Enim\nISSN : 2476-4772"),
+                new Models("Laporan Perekonomian Kabupaten Muara Enim\nISSN : 2475-4172"),
+                new Models("Statistik Daerah Kabupaten Muara Enim\nISSN : 2478-4072"),
+                new Models("Muara Enim dalam Angka\nISSN : 1878-4092"),
         };
 
         aList = new ArrayList<>(Arrays.asList(data));
@@ -38,7 +40,8 @@ public class ActivityBeritaResmi extends AppCompatActivity {
         rView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         linearLayoutManager = new LinearLayoutManager(this);
         rView.setLayoutManager(linearLayoutManager);
-        BeritaResmiViewAdapter laporanViewAdapter = new BeritaResmiViewAdapter(this, aList);
+        PublikasiViewAdapter laporanViewAdapter = new PublikasiViewAdapter(this, aList);
         rView.setAdapter(laporanViewAdapter);
+
     }
 }

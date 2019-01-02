@@ -1,24 +1,27 @@
-package muaraenimkab.bps.go.id.bps;
+package muaraenimkab.bps.go.id.bps.adapters;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.DisplayMetrics;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import muaraenimkab.bps.go.id.bps.models.Models;
+import muaraenimkab.bps.go.id.bps.R;
+import muaraenimkab.bps.go.id.bps.activities.ActivityBerita;
+import muaraenimkab.bps.go.id.bps.activities.ActivityBeritaResmi;
+import muaraenimkab.bps.go.id.bps.activities.ActivityKontak;
+import muaraenimkab.bps.go.id.bps.activities.ActivityMainRoot;
+import muaraenimkab.bps.go.id.bps.activities.ActivityPublikasi;
+import muaraenimkab.bps.go.id.bps.activities.ActivityTentang;
 
 public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.DataObjectHolder> {
     private Context context;

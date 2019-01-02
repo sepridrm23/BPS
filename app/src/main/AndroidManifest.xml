@@ -10,38 +10,38 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".activities.SplashScreenActivity"
             android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.MainActivity">
         </activity>
-        <activity android:name=".ActivityMainRoot">
+        <activity android:name=".activities.ActivityMainRoot">
         </activity>
-        <activity android:name=".ActivityKontak">
+        <activity android:name=".activities.ActivityKontak">
         </activity>
-        <activity android:name=".ActivityTentang"
+        <activity android:name=".activities.ActivityTentang"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".ActivityRootSosial">
+        <activity android:name=".activities.ActivityRootSosial">
         </activity>
-        <activity android:name=".ActivityRootEkonomi">
+        <activity android:name=".activities.ActivityRootEkonomi">
         </activity>
-        <activity android:name=".ActivityRootPertanian">
+        <activity android:name=".activities.ActivityRootPertanian">
         </activity>
         <activity
-            android:name=".ActivityPublikasi"
+            android:name=".activities.ActivityPublikasi"
             android:windowSoftInputMode="stateHidden">
         </activity>
         <activity
-            android:name=".ActivityBeritaResmi"
+            android:name=".activities.ActivityBeritaResmi"
             android:windowSoftInputMode="stateHidden">
         </activity>
         <activity
-            android:name=".ActivityBerita"
+            android:name=".activities.ActivityBerita"
             android:windowSoftInputMode="stateHidden">
         </activity>
     </application>

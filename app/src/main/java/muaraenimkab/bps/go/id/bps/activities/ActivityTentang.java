@@ -1,4 +1,4 @@
-package muaraenimkab.bps.go.id.bps;
+package muaraenimkab.bps.go.id.bps.activities;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
@@ -12,7 +12,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.design.widget.TabLayout;
 import android.support.v7.widget.Toolbar;
 
-import java.util.Objects;
+import muaraenimkab.bps.go.id.bps.fragments.FragmentInformasi;
+import muaraenimkab.bps.go.id.bps.fragments.FragmentPengolahanData;
+import muaraenimkab.bps.go.id.bps.fragments.FragmentStrukturOrganisasi;
+import muaraenimkab.bps.go.id.bps.fragments.FragmentTugasFungsi;
+import muaraenimkab.bps.go.id.bps.fragments.FragmentVisiMisi;
+import muaraenimkab.bps.go.id.bps.R;
 
 public class ActivityTentang extends AppCompatActivity {
     TabLayout tabLayout;

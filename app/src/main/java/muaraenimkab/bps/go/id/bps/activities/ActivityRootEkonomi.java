@@ -1,4 +1,4 @@
-package muaraenimkab.bps.go.id.bps;
+package muaraenimkab.bps.go.id.bps.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import muaraenimkab.bps.go.id.bps.models.Models;
+import muaraenimkab.bps.go.id.bps.R;
 
 public class ActivityRootEkonomi extends AppCompatActivity {
     RecyclerView rView;

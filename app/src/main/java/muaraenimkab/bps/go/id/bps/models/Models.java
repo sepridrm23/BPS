@@ -1,4 +1,4 @@
-package muaraenimkab.bps.go.id.bps;
+package muaraenimkab.bps.go.id.bps.models;
 
 public class Models {
     String title;

@@ -1,4 +1,4 @@
-package muaraenimkab.bps.go.id.bps;
+package muaraenimkab.bps.go.id.bps.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,6 +13,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import muaraenimkab.bps.go.id.bps.models.Models;
+import muaraenimkab.bps.go.id.bps.R;
+import muaraenimkab.bps.go.id.bps.activities.ActivityRootEkonomi;
+import muaraenimkab.bps.go.id.bps.activities.ActivityRootPertanian;
+import muaraenimkab.bps.go.id.bps.activities.ActivityRootSosial;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.DataObjectHolder> {
     private Context context;

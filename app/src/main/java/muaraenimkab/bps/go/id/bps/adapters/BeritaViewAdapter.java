@@ -1,8 +1,7 @@
-package muaraenimkab.bps.go.id.bps;
+package muaraenimkab.bps.go.id.bps.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
@@ -14,21 +13,22 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class SosialViewAdapter extends RecyclerView.Adapter<SosialViewAdapter.DataObjectHolder> {
-    private Context context;
-    private ArrayList<Models> mList;
-    private String flag;
+import muaraenimkab.bps.go.id.bps.models.Berita;
+import muaraenimkab.bps.go.id.bps.R;
 
-    public SosialViewAdapter(Context context, ArrayList<Models> mList, String flag) {
+public class BeritaViewAdapter extends RecyclerView.Adapter<BeritaViewAdapter.DataObjectHolder> {
+    private Context context;
+    private ArrayList<Berita> mList;
+
+    public BeritaViewAdapter(Context context, ArrayList<Berita> mList) {
         this.context = context;
         this.mList = mList;
-        this.flag = flag;
     }
 
     @NonNull
     @Override
     public DataObjectHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_berita, parent, false);
         return new DataObjectHolder(view);
     }
 
@@ -36,6 +36,7 @@ public class SosialViewAdapter extends RecyclerView.Adapter<SosialViewAdapter.Da
     @Override
     public void onBindViewHolder(@NonNull final DataObjectHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.tvTitle.setText(mList.get(position).getTitle());
+        holder.tvSubtitle.setText(mList.get(position).getSubtitle());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,11 +53,12 @@ public class SosialViewAdapter extends RecyclerView.Adapter<SosialViewAdapter.Da
     }
 
     class DataObjectHolder extends RecyclerView.ViewHolder {
-        TextView tvTitle;
+        TextView tvTitle, tvSubtitle;
 
         DataObjectHolder(View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tv_title);
+            tvSubtitle = itemView.findViewById(R.id.tv_subtitle);
         }
     }
 }

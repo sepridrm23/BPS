@@ -1,4 +1,4 @@
-package muaraenimkab.bps.go.id.bps;
+package muaraenimkab.bps.go.id.bps.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,19 +13,24 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class IndikatorViewAdapter extends RecyclerView.Adapter<IndikatorViewAdapter.DataObjectHolder> {
+import muaraenimkab.bps.go.id.bps.models.Models;
+import muaraenimkab.bps.go.id.bps.R;
+
+public class SosialViewAdapter extends RecyclerView.Adapter<SosialViewAdapter.DataObjectHolder> {
     private Context context;
     private ArrayList<Models> mList;
+    private String flag;
 
-    public IndikatorViewAdapter(Context context, ArrayList<Models> mList) {
+    public SosialViewAdapter(Context context, ArrayList<Models> mList, String flag) {
         this.context = context;
         this.mList = mList;
+        this.flag = flag;
     }
 
     @NonNull
     @Override
     public DataObjectHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_indikator, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
         return new DataObjectHolder(view);
     }
 

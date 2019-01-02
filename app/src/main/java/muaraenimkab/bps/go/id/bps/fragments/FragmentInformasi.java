@@ -1,4 +1,4 @@
-package muaraenimkab.bps.go.id.bps;
+package muaraenimkab.bps.go.id.bps.fragments;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import muaraenimkab.bps.go.id.bps.R;
 
 public class FragmentInformasi extends Fragment {
     public FragmentInformasi(){

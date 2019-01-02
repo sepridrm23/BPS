@@ -1,4 +1,4 @@
-package muaraenimkab.bps.go.id.bps;
+package muaraenimkab.bps.go.id.bps.fragments;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -9,13 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FragmentVisiMisi extends Fragment {
-    public FragmentVisiMisi(){
+import muaraenimkab.bps.go.id.bps.R;
+
+public class FragmentStrukturOrganisasi extends Fragment {
+    public FragmentStrukturOrganisasi(){
 
     }
 
-    public static FragmentVisiMisi newInstance() {
-        FragmentVisiMisi fragment = new FragmentVisiMisi();
+    public static FragmentStrukturOrganisasi newInstance() {
+        FragmentStrukturOrganisasi fragment = new FragmentStrukturOrganisasi();
         return fragment;
     }
 
@@ -28,7 +30,7 @@ public class FragmentVisiMisi extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_visi_misi, container, false);
+        View v = inflater.inflate(R.layout.fragment_struktur, container, false);
 
         return v;
     }

@@ -1,9 +1,11 @@
-package muaraenimkab.bps.go.id.bps;
+package muaraenimkab.bps.go.id.bps.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import muaraenimkab.bps.go.id.bps.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
     Thread splashTread;

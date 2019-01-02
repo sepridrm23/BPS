@@ -1,9 +1,7 @@
-package muaraenimkab.bps.go.id.bps;
+package muaraenimkab.bps.go.id.bps.activities;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +9,10 @@ import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import muaraenimkab.bps.go.id.bps.models.Berita;
+import muaraenimkab.bps.go.id.bps.adapters.BeritaViewAdapter;
+import muaraenimkab.bps.go.id.bps.R;
 
 public class ActivityBerita extends AppCompatActivity {
     RecyclerView rView;

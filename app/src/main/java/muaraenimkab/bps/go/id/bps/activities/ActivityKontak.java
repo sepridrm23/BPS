@@ -1,10 +1,12 @@
-package muaraenimkab.bps.go.id.bps;
+package muaraenimkab.bps.go.id.bps.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import muaraenimkab.bps.go.id.bps.R;
 
 public class ActivityKontak extends AppCompatActivity {
     @Override

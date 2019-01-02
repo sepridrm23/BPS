@@ -1,4 +1,4 @@
-package muaraenimkab.bps.go.id.bps;
+package muaraenimkab.bps.go.id.bps.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,11 +13,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class BeritaViewAdapter extends RecyclerView.Adapter<BeritaViewAdapter.DataObjectHolder> {
-    private Context context;
-    private ArrayList<Berita> mList;
+import muaraenimkab.bps.go.id.bps.models.Models;
+import muaraenimkab.bps.go.id.bps.R;
 
-    public BeritaViewAdapter(Context context, ArrayList<Berita> mList) {
+public class PublikasiViewAdapter extends RecyclerView.Adapter<PublikasiViewAdapter.DataObjectHolder> {
+    private Context context;
+    private ArrayList<Models> mList;
+
+    public PublikasiViewAdapter(Context context, ArrayList<Models> mList) {
         this.context = context;
         this.mList = mList;
     }
@@ -25,7 +28,7 @@ public class BeritaViewAdapter extends RecyclerView.Adapter<BeritaViewAdapter.Da
     @NonNull
     @Override
     public DataObjectHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_berita, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_publikasi, parent, false);
         return new DataObjectHolder(view);
     }
 
@@ -33,7 +36,6 @@ public class BeritaViewAdapter extends RecyclerView.Adapter<BeritaViewAdapter.Da
     @Override
     public void onBindViewHolder(@NonNull final DataObjectHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.tvTitle.setText(mList.get(position).getTitle());
-        holder.tvSubtitle.setText(mList.get(position).getSubtitle());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,12 +52,11 @@ public class BeritaViewAdapter extends RecyclerView.Adapter<BeritaViewAdapter.Da
     }
 
     class DataObjectHolder extends RecyclerView.ViewHolder {
-        TextView tvTitle, tvSubtitle;
+        TextView tvTitle;
 
         DataObjectHolder(View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tv_title);
-            tvSubtitle = itemView.findViewById(R.id.tv_subtitle);
         }
     }
 }
