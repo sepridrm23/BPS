@@ -2,7 +2,7 @@ package muaraenimkab.bps.go.id.bps.models;
 
 public class Berita {
     String title, subtitle;
-    Berita(String title, String subtitle){
+    public Berita(String title, String subtitle){
         this.title = title;
         this.subtitle = subtitle;
     }
