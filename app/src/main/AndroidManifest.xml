@@ -27,12 +27,6 @@
         <activity android:name=".activities.ActivityTentang"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".activities.ActivityRootSosial">
-        </activity>
-        <activity android:name=".activities.ActivityRootEkonomi">
-        </activity>
-        <activity android:name=".activities.ActivityRootPertanian">
-        </activity>
         <activity
             android:name=".activities.ActivityPublikasi"
             android:windowSoftInputMode="stateHidden">
@@ -44,6 +38,9 @@
         <activity
             android:name=".activities.ActivityBerita"
             android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity
+            android:name=".activities.ActivityDetail">
         </activity>
     </application>
 

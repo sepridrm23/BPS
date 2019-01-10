@@ -14,11 +14,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import muaraenimkab.bps.go.id.bps.activities.ActivityDetail;
 import muaraenimkab.bps.go.id.bps.models.Models;
 import muaraenimkab.bps.go.id.bps.R;
-import muaraenimkab.bps.go.id.bps.activities.ActivityRootEkonomi;
-import muaraenimkab.bps.go.id.bps.activities.ActivityRootPertanian;
-import muaraenimkab.bps.go.id.bps.activities.ActivityRootSosial;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.DataObjectHolder> {
     private Context context;
@@ -47,19 +45,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View v) {
                 //action
-                if (flag.equals("1")){
-                    Intent intent = new Intent(context, ActivityRootSosial.class);
-                    intent.putExtra("flag", mList.get(position).getTitle());
-                    context.startActivity(intent);
-                }else if (flag.equals("2")){
-                    Intent intent = new Intent(context, ActivityRootEkonomi.class);
-                    intent.putExtra("flag", mList.get(position).getTitle());
-                    context.startActivity(intent);
-                }else if (flag.equals("3")){
-                    Intent intent = new Intent(context, ActivityRootPertanian.class);
-                    intent.putExtra("flag", mList.get(position).getTitle());
-                    context.startActivity(intent);
-                }
+                context.startActivity(new Intent(context, ActivityDetail.class));
             }
         });
 

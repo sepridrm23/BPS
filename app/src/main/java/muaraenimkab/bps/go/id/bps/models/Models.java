@@ -1,7 +1,7 @@
 package muaraenimkab.bps.go.id.bps.models;
 
 public class Models {
-    String title;
+    private String title;
 
     public Models(String title){
         this.title = title;

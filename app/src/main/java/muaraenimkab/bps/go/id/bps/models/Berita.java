@@ -1,7 +1,12 @@
 package muaraenimkab.bps.go.id.bps.models;
 
 public class Berita {
+<<<<<<< Updated upstream
     String title, subtitle;
+=======
+    private String title, subtitle;
+
+>>>>>>> Stashed changes
     public Berita(String title, String subtitle){
         this.title = title;
         this.subtitle = subtitle;
