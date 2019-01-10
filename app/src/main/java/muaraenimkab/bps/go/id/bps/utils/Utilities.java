@@ -30,14 +30,14 @@ import muaraenimkab.bps.go.id.bps.models.User;
 import okhttp3.OkHttpClient;
 
 public class Utilities {
-    private static String server = "http://www.mance.muaraenimkab.go.id/";
+    private static String server = "http://www.berasan.net/demo/muaraenim/android/";
 
-    public static String getBaseURLUser() {
-        return server + "android/user/";
+    public static String getURLLogo() {
+        return server + "logo/";
     }
 
-    public static String getURLImageIklan() {
-        return server + "wp/gambar_iklan/";
+    public static String getURL() {
+        return server;
     }
 
 //    public static void showAsToast(Context context, String text) {
