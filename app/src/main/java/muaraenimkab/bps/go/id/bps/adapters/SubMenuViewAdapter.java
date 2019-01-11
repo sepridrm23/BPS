@@ -1,43 +1,32 @@
 package muaraenimkab.bps.go.id.bps.adapters;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import muaraenimkab.bps.go.id.bps.models.Menu;
-import muaraenimkab.bps.go.id.bps.models.Models;
 import muaraenimkab.bps.go.id.bps.R;
-import muaraenimkab.bps.go.id.bps.activities.ActivityBerita;
-import muaraenimkab.bps.go.id.bps.activities.ActivityBeritaResmi;
-import muaraenimkab.bps.go.id.bps.activities.ActivityKontak;
 import muaraenimkab.bps.go.id.bps.activities.ActivityMainRoot;
-import muaraenimkab.bps.go.id.bps.activities.ActivityPublikasi;
-import muaraenimkab.bps.go.id.bps.activities.ActivityTentang;
+import muaraenimkab.bps.go.id.bps.models.Menu;
 import muaraenimkab.bps.go.id.bps.utils.Utilities;
 
-public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.DataObjectHolder> {
+public class SubMenuViewAdapter extends RecyclerView.Adapter<SubMenuViewAdapter.DataObjectHolder> {
     private Context context;
     private ArrayList<Menu> mList;
 
-    public MenuViewAdapter(Context context, ArrayList<Menu> mList) {
+    public SubMenuViewAdapter(Context context, ArrayList<Menu> mList) {
         this.context = context;
         this.mList = mList;
     }
@@ -45,7 +34,7 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.DataOb
     @NonNull
     @Override
     public DataObjectHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_menu, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
         return new DataObjectHolder(view);
     }
 
@@ -54,7 +43,7 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.DataOb
     public void onBindViewHolder(@NonNull final DataObjectHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.tvTitle.setText(mList.get(position).getNama());
 //        Log.e("logo", Utilities.getURLLogo()+mList.get(position).getLogo());
-        Glide.with(context).load(Utilities.getURLLogo()+mList.get(position).getLogo()).into(holder.ivLogo);
+//        Glide.with(context).load(Utilities.getURLLogo()+mList.get(position).getLogo()).into(holder.ivLogo);
 
 //        Picasso .with(context)
 //                .load(Utilities.getURLLogo() + mList.get(position).getLogo())
@@ -93,9 +82,9 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.DataOb
 //                    context.startActivity(intent);
 //                }
 
-                Intent intent = new Intent(context, ActivityMainRoot.class);
-                intent.putExtra("flag", String.valueOf(mList.get(position).getId()));
-                context.startActivity(intent);
+//                Intent intent = new Intent(context, ActivityMainRoot.class);
+//                intent.putExtra("flag", String.valueOf(mList.get(position).getSubid()));
+//                context.startActivity(intent);
 
             }
         });
@@ -109,13 +98,13 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.DataOb
 
     class DataObjectHolder extends RecyclerView.ViewHolder {
         TextView tvTitle;
-        ImageView ivLogo;
+//        ImageView ivLogo;
 //        CardView cView;
 
         DataObjectHolder(View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tv_title);
-            ivLogo = itemView.findViewById(R.id.iv_logo);
+//            ivLogo = itemView.findViewById(R.id.iv_logo);
 //            cView = itemView.findViewById(R.id.card_view);
 
 //            Display display = ((Activity) context).getWindowManager().getDefaultDisplay();

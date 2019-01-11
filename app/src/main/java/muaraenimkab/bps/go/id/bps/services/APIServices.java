@@ -19,6 +19,11 @@ public interface APIServices {
     Call<Value<Menu>> getmenu(@Field("xkey") String xkey);
 
     @FormUrlEncoded
+    @POST("getsubmenu.php")
+    Call<Value<Menu>> getsubmenu(@Field("xkey") String xkey,
+                                 @Field("subid") String subid);
+
+    @FormUrlEncoded
     @POST("sdatapemerintahan.php")
     Call<Value<DataPemerintahan>> sdatapemerintahan(@Field("xkey") String xkey,
                                                     @Field("id") String id);

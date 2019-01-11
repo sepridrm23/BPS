@@ -164,9 +164,11 @@ public class MainActivity extends AppCompatActivity {
 //
 //        aList = new ArrayList<>(Arrays.asList(data));
 
+        getMenu();
+
         DisplayMetrics displayMetrics = this.getResources().getDisplayMetrics();
         dpWidth = displayMetrics.widthPixels / displayMetrics.density;
-
+//
         imageView.setLayoutParams(new LinearLayout.LayoutParams(displayMetrics.widthPixels, displayMetrics.widthPixels/2));
 
 //        int noOfColumns = (int) (dpWidth / 120);
@@ -181,7 +183,6 @@ public class MainActivity extends AppCompatActivity {
 //        MenuViewAdapter rcAdapter = new MenuViewAdapter(this, aList);
 //        rView.setAdapter(rcAdapter);
 
-        getMenu();
 
     }
 
@@ -226,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
                         pDialog.dismiss();
                     }
                 }else {
-                    Snackbar.make(MainActivity.this.findViewById(android.R.id.content), "Gagal mengambil data. Silahkan coba lagi",
+                    Snackbar.make(MainActivity.this.findViewById(android.R.id.content), "gagal mengambil data. Silahkan coba lagi",
                             Snackbar.LENGTH_LONG).show();
                     pDialog.dismiss();
                 }
