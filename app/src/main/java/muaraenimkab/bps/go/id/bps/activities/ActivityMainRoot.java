@@ -49,7 +49,7 @@ public class ActivityMainRoot extends AppCompatActivity {
         rView = findViewById(R.id.recycler_view);
 
         flag = getIntent().getStringExtra("flag");
-//        Log.e("flag", flag);
+        //Log.e("flag", flag);
         getSubMenu();
 
 //        if (flag.equals("0")) {

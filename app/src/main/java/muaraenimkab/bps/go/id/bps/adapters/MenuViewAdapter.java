@@ -22,6 +22,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import muaraenimkab.bps.go.id.bps.activities.ActivityDetail;
 import muaraenimkab.bps.go.id.bps.models.Menu;
 import muaraenimkab.bps.go.id.bps.models.Models;
 import muaraenimkab.bps.go.id.bps.R;
@@ -92,10 +93,10 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.DataOb
 //                    intent.putExtra("flag", String.valueOf(position));
 //                    context.startActivity(intent);
 //                }
-
                 Intent intent = new Intent(context, ActivityMainRoot.class);
                 intent.putExtra("flag", String.valueOf(mList.get(position).getId()));
                 context.startActivity(intent);
+
 
             }
         });

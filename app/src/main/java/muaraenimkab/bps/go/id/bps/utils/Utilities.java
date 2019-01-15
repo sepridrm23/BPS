@@ -30,8 +30,8 @@ import muaraenimkab.bps.go.id.bps.models.User;
 import okhttp3.OkHttpClient;
 
 public class Utilities {
-    //    private static String server = "http://www.berasan.net/demo/muaraenim/android/";
-    private static String server = "http://10.10.29.214/webbps/android/";
+    private static String server = "http://www.simada.muaraenimkab.go.id/android/";
+    //private static String server = "http://10.10.29.218/webbps/android/";
 
     public static String getURLLogo() {
         return server + "logo/";

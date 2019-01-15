@@ -24,28 +24,23 @@ public interface APIServices {
                                  @Field("subid") String subid);
 
     @FormUrlEncoded
-    @POST("sdatapemerintahan.php")
-    Call<Value<DataPemerintahan>> sdatapemerintahan(@Field("xkey") String xkey,
-                                                    @Field("id") String id);
+    @POST("getdatapemerintahan.php")
+    Call<Value<DataPemerintahan>> getdatapemerintahan(@Field("xkey") String xkey);
 
     @FormUrlEncoded
-    @POST("sanggotadprd.php")
-    Call<Value<AnggotaDPRD>> sanggotadprd(@Field("xkey") String xkey,
-                                          @Field("id") String id);
+    @POST("getanggotadprd.php")
+    Call<Value<AnggotaDPRD>> getanggotadprd(@Field("xkey") String xkey);
 
     @FormUrlEncoded
-    @POST("sanggotadewan.php")
-    Call<Value<AnggotaDewan>> sanggotadewan(@Field("xkey") String xkey,
-                                            @Field("id") String id);
+    @POST("getanggotadewan.php")
+    Call<Value<AnggotaDewan>> getanggotadewan(@Field("xkey") String xkey);
 
     @FormUrlEncoded
-    @POST("slapanganusaha.php")
-    Call<Value<LapanganUsaha>> slapanganusaha(@Field("xkey") String xkey,
-                                              @Field("id") String id);
+    @POST("getlapanganusaha.php")
+    Call<Value<LapanganUsaha>> getlapanganusaha(@Field("xkey") String xkey);
 
     @FormUrlEncoded
-    @POST("sdatapenduduk.php")
-    Call<Value<DataPenduduk>> sdatapenduduk(@Field("xkey") String xkey,
-                                            @Field("id") String id);
+    @POST("getdatapenduduk.php")
+    Call<Value<DataPenduduk>> getdatapenduduk(@Field("xkey") String xkey);
 
 }

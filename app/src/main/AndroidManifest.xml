@@ -27,8 +27,7 @@
         </activity>
         <activity android:name=".activities.MainActivity">
         </activity>
-        <activity android:name=".activities.ActivityMainRoot"
-            android:parentActivityName=".activities.MainActivity">
+        <activity android:name=".activities.ActivityMainRoot">
         </activity>
         <activity android:name=".activities.ActivityKontak">
         </activity>

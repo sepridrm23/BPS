@@ -18,6 +18,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 import muaraenimkab.bps.go.id.bps.R;
+import muaraenimkab.bps.go.id.bps.activities.ActivityDetail;
 import muaraenimkab.bps.go.id.bps.activities.ActivityMainRoot;
 import muaraenimkab.bps.go.id.bps.models.Menu;
 import muaraenimkab.bps.go.id.bps.utils.Utilities;
@@ -56,6 +57,8 @@ public class SubMenuViewAdapter extends RecyclerView.Adapter<SubMenuViewAdapter.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(context, ActivityDetail.class);
+                context.startActivity(intent);
 //                if (position == 14){
 //                    Intent intent = new Intent(context, ActivityPublikasi.class);
 //                    intent.putExtra("flag", "14");
