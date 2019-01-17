@@ -56,6 +56,7 @@ public class ActivityDetail extends AppCompatActivity {
     Spinner spinner;
     EditText editText;
     Button button;
+    LinearLayout pencarian;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,6 +68,7 @@ public class ActivityDetail extends AppCompatActivity {
         TextView tvTabel = findViewById(R.id.tabel);
         rLayout = findViewById(R.id.rLayout);
         lLayout = findViewById(R.id.lLayout);
+        pencarian=findViewById(R.id.pencarian);
 
         spinner = findViewById(R.id.spinner);
         editText = findViewById(R.id.etCari);
@@ -205,6 +207,7 @@ public class ActivityDetail extends AppCompatActivity {
                         String[][] data = response.body().getData();
                         String[] field = response.body().getField();
 
+                        pencarian.setVisibility(View.VISIBLE);
                         List<String> arr = new ArrayList<>(Arrays.asList(field));
                         ArrayAdapter<String> adapter = new ArrayAdapter<>(ActivityDetail.this, android.R.layout.simple_spinner_dropdown_item, arr);
                         spinner.setAdapter(adapter);
@@ -265,12 +268,14 @@ public class ActivityDetail extends AppCompatActivity {
                     }else if(success == 2){
                         rLayout.setVisibility(View.VISIBLE);
                         lLayout.setVisibility(View.GONE);
+                        pencarian.setVisibility(View.GONE);
                         Snackbar.make(ActivityDetail.this.findViewById(android.R.id.content), "Data belum tersedia",
                                 Snackbar.LENGTH_LONG).show();
                         pDialog.dismiss();
                     }else {
                         rLayout.setVisibility(View.VISIBLE);
                         lLayout.setVisibility(View.GONE);
+                        pencarian.setVisibility(View.GONE);
                         Snackbar.make(ActivityDetail.this.findViewById(android.R.id.content), "Gagal mengambil data. Silahkan coba lagi",
                                 Snackbar.LENGTH_LONG).show();
                         pDialog.dismiss();
@@ -278,6 +283,7 @@ public class ActivityDetail extends AppCompatActivity {
                 }else {
                     rLayout.setVisibility(View.VISIBLE);
                     lLayout.setVisibility(View.GONE);
+                    pencarian.setVisibility(View.GONE);
                     Snackbar.make(ActivityDetail.this.findViewById(android.R.id.content), "Gagal mengambil data. Silahkan coba lagi",
                             Snackbar.LENGTH_LONG).show();
                     pDialog.dismiss();
@@ -290,6 +296,7 @@ public class ActivityDetail extends AppCompatActivity {
                 System.out.println("Retrofit Error:" + t.getMessage());
                 rLayout.setVisibility(View.VISIBLE);
                 lLayout.setVisibility(View.GONE);
+                pencarian.setVisibility(View.GONE);
                 Snackbar.make(ActivityDetail.this.findViewById(android.R.id.content), "Tidak terhubung ke Internet",
                         Snackbar.LENGTH_LONG).show();
                 pDialog.dismiss();
