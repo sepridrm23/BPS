@@ -7,4 +7,8 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorDefault">#757575</color>
     <color name="colorDivider">#d6d5cf</color>
+
+    <color name="colorToGet">#00FF00</color>
+    <color name="colorToPay">#ff0000</color>
+    <color name="colorSecondary">#64b5f6</color>
 </resources>

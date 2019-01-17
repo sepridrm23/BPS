@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/logo_bps"/>
+        android:src="@drawable/ic_kominfo"/>
 
     <TextView
         android:layout_width="wrap_content"

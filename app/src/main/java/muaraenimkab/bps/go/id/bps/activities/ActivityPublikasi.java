@@ -27,6 +27,7 @@ public class ActivityPublikasi extends AppCompatActivity {
         rView = findViewById(R.id.recycler_view);
 
         ActivityPublikasi.this.setTitle("Publikasi Statistik");
+
         data = new Models[]{
                 new Models("Indikator Penting Kabupaten Muara Enim\nISSN : 2477-4472"),
                 new Models("Indeks Tendensi Konsumen Kabupaten Muara Enim\nISSN : 2476-4772"),

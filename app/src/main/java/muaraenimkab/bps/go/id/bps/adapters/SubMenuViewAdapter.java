@@ -10,18 +10,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
 import muaraenimkab.bps.go.id.bps.R;
 import muaraenimkab.bps.go.id.bps.activities.ActivityDetail;
-import muaraenimkab.bps.go.id.bps.activities.ActivityMainRoot;
 import muaraenimkab.bps.go.id.bps.models.Menu;
-import muaraenimkab.bps.go.id.bps.utils.Utilities;
 
 public class SubMenuViewAdapter extends RecyclerView.Adapter<SubMenuViewAdapter.DataObjectHolder> {
     private Context context;
@@ -35,7 +30,7 @@ public class SubMenuViewAdapter extends RecyclerView.Adapter<SubMenuViewAdapter.
     @NonNull
     @Override
     public DataObjectHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_submenu, parent, false);
         return new DataObjectHolder(view);
     }
 
@@ -58,7 +53,10 @@ public class SubMenuViewAdapter extends RecyclerView.Adapter<SubMenuViewAdapter.
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ActivityDetail.class);
+                intent.putExtra("id", mList.get(position).getId());
+                intent.putExtra("name", mList.get(position).getNama());
                 context.startActivity(intent);
+
 //                if (position == 14){
 //                    Intent intent = new Intent(context, ActivityPublikasi.class);
 //                    intent.putExtra("flag", "14");
@@ -80,12 +78,12 @@ public class SubMenuViewAdapter extends RecyclerView.Adapter<SubMenuViewAdapter.
 //                    intent.putExtra("flag", "18");
 //                    context.startActivity(intent);
 //                } else {
-//                    Intent intent = new Intent(context, ActivityMainRoot.class);
+//                    Intent intent = new Intent(context, ActivitySubMenu.class);
 //                    intent.putExtra("flag", String.valueOf(position));
 //                    context.startActivity(intent);
 //                }
 
-//                Intent intent = new Intent(context, ActivityMainRoot.class);
+//                Intent intent = new Intent(context, ActivitySubMenu.class);
 //                intent.putExtra("flag", String.valueOf(mList.get(position).getSubid()));
 //                context.startActivity(intent);
 

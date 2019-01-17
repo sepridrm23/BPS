@@ -9,22 +9,15 @@ import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Objects;
 
-import muaraenimkab.bps.go.id.bps.adapters.IndikatorViewAdapter;
-import muaraenimkab.bps.go.id.bps.adapters.MenuViewAdapter;
 import muaraenimkab.bps.go.id.bps.adapters.SubMenuViewAdapter;
 import muaraenimkab.bps.go.id.bps.models.Menu;
-import muaraenimkab.bps.go.id.bps.models.Models;
 import muaraenimkab.bps.go.id.bps.R;
-import muaraenimkab.bps.go.id.bps.adapters.RecyclerViewAdapter;
 import muaraenimkab.bps.go.id.bps.models.Value;
 import muaraenimkab.bps.go.id.bps.services.APIServices;
 import muaraenimkab.bps.go.id.bps.utils.Utilities;
@@ -35,25 +28,28 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ActivityMainRoot extends AppCompatActivity {
+public class ActivitySubMenu extends AppCompatActivity {
     RecyclerView rView;
     LinearLayoutManager linearLayoutManager;
-    ArrayList<Models> aList;
-    Models[] data;
-    String flag;
+//    ArrayList<Models> aList;
+//    Models[] data;
+    String id, name;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_root);
+        setContentView(R.layout.activity_submenu);
         rView = findViewById(R.id.recycler_view);
 
-        flag = getIntent().getStringExtra("flag");
-        //Log.e("flag", flag);
+        id = getIntent().getStringExtra("id");
+        name = getIntent().getStringExtra("name");
+
+        ActivitySubMenu.this.setTitle(name);
+
         getSubMenu();
 
 //        if (flag.equals("0")) {
-//            ActivityMainRoot.this.setTitle("Keadaan Geogradis & Iklim");
+//            ActivitySubMenu.this.setTitle("Keadaan Geogradis & Iklim");
 //            data = new Models[]{
 //                    new Models("Letak Geografis & Kondisi Topografi"),
 //                    new Models("Ketinggian"),
@@ -63,7 +59,7 @@ public class ActivityMainRoot extends AppCompatActivity {
 //                    new Models("Keadaan Iklim"),
 //            };
 //        }else if (flag.equals("1")){
-//            ActivityMainRoot.this.setTitle("Pemerintahan");
+//            ActivitySubMenu.this.setTitle("Pemerintahan");
 //            data = new Models[]{
 //                    new Models("Wilayah Administrasi"),
 //                    new Models("Keanggotaan Dewan"),
@@ -86,7 +82,7 @@ public class ActivityMainRoot extends AppCompatActivity {
 //                    new Models("Tenaga Kerja"),
 //            };
 //        }else if (flag.equals("2")){
-//            ActivityMainRoot.this.setTitle("Penduduk & Tenaga Kerja");
+//            ActivitySubMenu.this.setTitle("Penduduk & Tenaga Kerja");
 //            data = new Models[]{
 //                    new Models("Penduduk"),
 //                    new Models("Ketenagakerjaan"),
@@ -104,7 +100,7 @@ public class ActivityMainRoot extends AppCompatActivity {
 //                    new Models("Produk Domestik Regional Bruto"),
 //            };
 //        }else if (flag.equals("3")){
-//            ActivityMainRoot.this.setTitle("Sosial");
+//            ActivitySubMenu.this.setTitle("Sosial");
 //            data = new Models[]{
 //                    new Models("Pendidikan"),
 //                    new Models("Kesehatan"),
@@ -119,7 +115,7 @@ public class ActivityMainRoot extends AppCompatActivity {
 ////                    new Models("Tanaman Pangan"),
 //            };
 //        } else if (flag.equals("4")){
-//            ActivityMainRoot.this.setTitle("Pertanian");
+//            ActivitySubMenu.this.setTitle("Pertanian");
 //            data = new Models[]{
 //                    new Models("Tanaman Pangan"),
 //                    new Models("Perkebunan"),
@@ -132,7 +128,7 @@ public class ActivityMainRoot extends AppCompatActivity {
 ////                    new Models("Garis Kemiskinan September 2017 : 464.056 Rupiah/Kapita/Bulan"),
 //            };
 //        }else if (flag.equals("5")){
-//            ActivityMainRoot.this.setTitle("Industri, Tambang, Energi");
+//            ActivitySubMenu.this.setTitle("Industri, Tambang, Energi");
 //            data = new Models[]{
 //                    new Models("Perindustrian"),
 //                    new Models("Pertambangan"),
@@ -140,13 +136,13 @@ public class ActivityMainRoot extends AppCompatActivity {
 //                    new Models("Air"),
 //            };
 //        }else if (flag.equals("6")){
-//            ActivityMainRoot.this.setTitle("Perdagangan & Konstruksi");
+//            ActivitySubMenu.this.setTitle("Perdagangan & Konstruksi");
 //            data = new Models[]{
 //                    new Models("Perdagangan"),
 //                    new Models("Konstruksi"),
 //            };
 //        }else if (flag.equals("7")){
-//            ActivityMainRoot.this.setTitle("Transportasi, Komunikasi, Pariwisata");
+//            ActivitySubMenu.this.setTitle("Transportasi, Komunikasi, Pariwisata");
 //            data = new Models[]{
 //                    new Models("Prasarana Jalan"),
 //                    new Models("Angkutan Darat"),
@@ -155,18 +151,18 @@ public class ActivityMainRoot extends AppCompatActivity {
 //                    new Models("Pariwisata"),
 //            };
 //        }else if (flag.equals("8")){
-//            ActivityMainRoot.this.setTitle("Keuangan & Harga");
+//            ActivitySubMenu.this.setTitle("Keuangan & Harga");
 //            data = new Models[]{
 //                    new Models("Keuangan"),
 //                    new Models("Harga"),
 //            };
 //        }else if (flag.equals("9")){
-//            ActivityMainRoot.this.setTitle("Pengeluaran & Konsumsi Penduduk");
+//            ActivitySubMenu.this.setTitle("Pengeluaran & Konsumsi Penduduk");
 //            data = new Models[]{
 //                    new Models("Pengeluaran dan Konsumsi"),
 //            };
 //        }else if (flag.equals("10")){
-//            ActivityMainRoot.this.setTitle("Pendapatan Regional");
+//            ActivitySubMenu.this.setTitle("Pendapatan Regional");
 //            data = new Models[]{
 //                    new Models("Produk Domestik Regional Bruto (PDRB)"),
 //                    new Models("Struktur Ekonomi"),
@@ -175,18 +171,18 @@ public class ActivityMainRoot extends AppCompatActivity {
 //                    new Models("Pendapatan per Kapita"),
 //            };
 //        }else if (flag.equals("11")){
-//            ActivityMainRoot.this.setTitle("Kemiskinan");
+//            ActivitySubMenu.this.setTitle("Kemiskinan");
 //            data = new Models[]{
 //                    new Models("Kemiskinan"),
 //            };
 //        }else if (flag.equals("12")){
-//            ActivityMainRoot.this.setTitle("Perbandingan Regional");
+//            ActivitySubMenu.this.setTitle("Perbandingan Regional");
 //            data = new Models[]{
 //                    new Models("Kependudukan"),
 //                    new Models("Kemiskinan")
 //            };
 //        }else if (flag.equals("13")){
-//            ActivityMainRoot.this.setTitle("Indikator Strategis");
+//            ActivitySubMenu.this.setTitle("Indikator Strategis");
 //            data = new Models[]{
 //                    new Models("Angka Harapan Hidup 2017 : 65,14 Tahun"),
 //                    new Models("Angka Partisipasi Murni SD 2017 : 78,83 Persen"),
@@ -208,7 +204,6 @@ public class ActivityMainRoot extends AppCompatActivity {
 //            rView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 //            linearLayoutManager = new LinearLayoutManager(this);
 //            rView.setLayoutManager(linearLayoutManager);
-//            RecyclerViewAdapter laporanViewAdapter = new RecyclerViewAdapter(this, aList, flag);
 //            rView.setAdapter(laporanViewAdapter);
 //        }
     }
@@ -232,7 +227,7 @@ public class ActivityMainRoot extends AppCompatActivity {
                 .build();
 
         APIServices api = retrofit.create(APIServices.class);
-        Call<Value<Menu>> call = api.getsubmenu(random, flag);
+        Call<Value<Menu>> call = api.getsubmenu(random, id);
         call.enqueue(new Callback<Value<Menu>>() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
@@ -242,19 +237,19 @@ public class ActivityMainRoot extends AppCompatActivity {
                     if (success == 1) {
                         ArrayList<Menu> data = (ArrayList<Menu>) Objects.requireNonNull(response.body()).getData();
 
-                        rView.addItemDecoration(new DividerItemDecoration(ActivityMainRoot.this, LinearLayoutManager.VERTICAL));
-                        linearLayoutManager = new LinearLayoutManager(ActivityMainRoot.this);
+                        rView.addItemDecoration(new DividerItemDecoration(ActivitySubMenu.this, LinearLayoutManager.VERTICAL));
+                        linearLayoutManager = new LinearLayoutManager(ActivitySubMenu.this);
                         rView.setLayoutManager(linearLayoutManager);
-                        SubMenuViewAdapter laporanViewAdapter = new SubMenuViewAdapter(ActivityMainRoot.this, data);
+                        SubMenuViewAdapter laporanViewAdapter = new SubMenuViewAdapter(ActivitySubMenu.this, data);
                         rView.setAdapter(laporanViewAdapter);
                         pDialog.dismiss();
                     }else {
-                        Snackbar.make(ActivityMainRoot.this.findViewById(android.R.id.content), "Gagal mengambil data. Silahkan coba lagi"+response.body().getMessage(),
+                        Snackbar.make(ActivitySubMenu.this.findViewById(android.R.id.content), "Gagal mengambil data. Silahkan coba lagi"+response.body().getMessage(),
                                 Snackbar.LENGTH_LONG).show();
                         pDialog.dismiss();
                     }
                 }else {
-                    Snackbar.make(ActivityMainRoot.this.findViewById(android.R.id.content), "Gagal mengambil data. Silahkan coba lagi",
+                    Snackbar.make(ActivitySubMenu.this.findViewById(android.R.id.content), "Gagal mengambil data. Silahkan coba lagi",
                             Snackbar.LENGTH_LONG).show();
                     pDialog.dismiss();
                 }
@@ -264,7 +259,7 @@ public class ActivityMainRoot extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Call<Value<Menu>> call, @NonNull Throwable t) {
                 System.out.println("Retrofit Error:" + t.getMessage());
-                Snackbar.make(ActivityMainRoot.this.findViewById(android.R.id.content), "Tidak terhubung ke Internet",
+                Snackbar.make(ActivitySubMenu.this.findViewById(android.R.id.content), "Tidak terhubung ke Internet",
                         Snackbar.LENGTH_LONG).show();
                 pDialog.dismiss();
             }

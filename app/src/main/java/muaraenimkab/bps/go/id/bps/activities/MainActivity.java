@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 //        cvSosial.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, ActivityMainRoot.class);
+//                Intent intent = new Intent(MainActivity.this, ActivitySubMenu.class);
 //                intent.putExtra("flag", "1");
 //                startActivity(intent);
 //            }
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 //        cvEkonomi.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, ActivityMainRoot.class);
+//                Intent intent = new Intent(MainActivity.this, ActivitySubMenu.class);
 //                intent.putExtra("flag", "2");
 //                startActivity(intent);
 //            }
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 //        cvPertanian.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, ActivityMainRoot.class);
+//                Intent intent = new Intent(MainActivity.this, ActivitySubMenu.class);
 //                intent.putExtra("flag", "3");
 //                startActivity(intent);
 //            }
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 //        cvIndikator.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, ActivityMainRoot.class);
+//                Intent intent = new Intent(MainActivity.this, ActivitySubMenu.class);
 //                intent.putExtra("flag", "4");
 //                startActivity(intent);
 //            }
@@ -168,7 +168,6 @@ public class MainActivity extends AppCompatActivity {
 
         DisplayMetrics displayMetrics = this.getResources().getDisplayMetrics();
         dpWidth = displayMetrics.widthPixels / displayMetrics.density;
-//
         imageView.setLayoutParams(new LinearLayout.LayoutParams(displayMetrics.widthPixels, displayMetrics.widthPixels/2));
 
 //        int noOfColumns = (int) (dpWidth / 120);
