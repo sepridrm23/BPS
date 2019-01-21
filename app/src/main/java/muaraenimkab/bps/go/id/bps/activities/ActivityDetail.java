@@ -13,9 +13,12 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +28,7 @@ import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.anychart.AnyChart;
 import com.anychart.AnyChartView;
@@ -58,6 +62,10 @@ public class ActivityDetail extends AppCompatActivity {
     Button button;
     LinearLayout pencarian;
 
+    String[][] data, dataSearch;
+    String[] field;
+    int counter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,29 +93,171 @@ public class ActivityDetail extends AppCompatActivity {
 //        Pie pie = AnyChart.column3d();
         Cartesian cartesian = AnyChart.vertical();
 
-        List<DataEntry> data = new ArrayList<>();
-        data.add(new ValueDataEntry("Lubuk Linggau", 250000));
-        data.add(new ValueDataEntry("Pagar Alam", 150000));
-        data.add(new ValueDataEntry("Prabumulih", 200000));
-        data.add(new ValueDataEntry("Palembang", 1550000));
-        data.add(new ValueDataEntry("Empat Lawang", 200000));
-        data.add(new ValueDataEntry("Ogan Ilir", 200000));
-        data.add(new ValueDataEntry("OKU Timur", 270000));
-        data.add(new ValueDataEntry("OKU Selatan", 480000));
-        data.add(new ValueDataEntry("Banyuasin", 550000));
-        data.add(new ValueDataEntry("Musi Banyuasin", 450000));
-        data.add(new ValueDataEntry("Muratara", 850000));
-        data.add(new ValueDataEntry("Musi Rawas", 510000));
-        data.add(new ValueDataEntry("Lahat", 480000));
-        data.add(new ValueDataEntry("Pali", 470000));
-        data.add(new ValueDataEntry("Muara Enim", 510000));
-        data.add(new ValueDataEntry("OKI", 850000));
-        data.add(new ValueDataEntry("OKU", 450000));
+        final List<DataEntry> dataChart = new ArrayList<>();
+        dataChart.add(new ValueDataEntry("Lubuk Linggau", 250000));
+        dataChart.add(new ValueDataEntry("Pagar Alam", 150000));
+        dataChart.add(new ValueDataEntry("Prabumulih", 200000));
+        dataChart.add(new ValueDataEntry("Palembang", 1550000));
+        dataChart.add(new ValueDataEntry("Empat Lawang", 200000));
+        dataChart.add(new ValueDataEntry("Ogan Ilir", 200000));
+        dataChart.add(new ValueDataEntry("OKU Timur", 270000));
+        dataChart.add(new ValueDataEntry("OKU Selatan", 480000));
+        dataChart.add(new ValueDataEntry("Banyuasin", 550000));
+        dataChart.add(new ValueDataEntry("Musi Banyuasin", 450000));
+        dataChart.add(new ValueDataEntry("Muratara", 850000));
+        dataChart.add(new ValueDataEntry("Musi Rawas", 510000));
+        dataChart.add(new ValueDataEntry("Lahat", 480000));
+        dataChart.add(new ValueDataEntry("Pali", 470000));
+        dataChart.add(new ValueDataEntry("Muara Enim", 510000));
+        dataChart.add(new ValueDataEntry("OKI", 850000));
+        dataChart.add(new ValueDataEntry("OKU", 450000));
 
-        cartesian.data(data);
+        cartesian.data(dataChart);
         anyChartView.setChart(cartesian);
 
         getDetail(getIntent().getStringExtra("id"));
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceType")
+            @Override
+            public void onClick(View v) {
+                int index = spinner.getSelectedItemPosition();
+                counter=0;
+                int flag = 0;
+                dataSearch = new String[data.length][field.length];
+                for (int a=0; a<data.length; a++) {
+                    if (!editText.getText().toString().isEmpty()) {
+//                        Log.e("data", index + "|" + data[a][index] + "|" + editText.getText().toString().toLowerCase());
+                        if (data[a][index].toLowerCase().contains(editText.getText().toString().toLowerCase())) {
+//                            Log.e("in", "in"+" "+data[a][index]);
+                            for(int b=0; b<field.length; b++) {
+                                dataSearch[counter][b] = data[a][b];
+                            }
+                            counter++;
+                            flag = 1;
+                        }else {
+//                            Log.e("out", "out"+" "+data[a][index]);
+                            if (flag != 1) {
+                                flag = 2;
+                            }
+                        }
+                    }else {
+//                        Log.e("null", "null");
+                        flag = 0;
+                    }
+                }
+
+                if (flag == 2){
+                    tl.removeAllViews();
+                    TableRow tr_head = new TableRow(ActivityDetail.this);
+                    tr_head.setId(999);
+                    tr_head.setBackgroundColor(ContextCompat.getColor(ActivityDetail.this, R.color.colorPrimary));
+                    tr_head.setLayoutParams(new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.FILL_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                    for(int a=0; a<field.length; a++){
+                        TextView tv = new TextView(ActivityDetail.this);
+                        tv.setId(a);
+                        tv.setText(field[a]);
+                        tv.setTextColor(Color.WHITE);
+                        tv.setTextSize(17);
+                        tv.setTypeface(null, Typeface.BOLD);
+                        tv.setPadding(15, 15, 15, 15);
+                        tr_head.addView(tv);
+                    }
+
+                    tl.addView(tr_head, new TableLayout.LayoutParams(
+                            ViewGroup.LayoutParams.FILL_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT));
+
+//                    for(int a=0; a<1; a++){
+                        TableRow tr = new TableRow(ActivityDetail.this);
+                        tr.setBackgroundColor(Color.GRAY);
+                        tr.setId((field.length+1)+1);
+                        tr.setLayoutParams(new LinearLayout.LayoutParams(
+                                LinearLayout.LayoutParams.FILL_PARENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                        for(int b=0; b<field.length; b++){
+                            TextView tv = new TextView(ActivityDetail.this);
+                            tv.setId((field.length+1)+(1+1)+b);
+                            tv.setText("                    -                    ");
+                            tv.setTextSize(15);
+                            tv.setPadding(18, 5, 15, 5);
+                            tv.setTextColor(Color.WHITE);
+                            tr.addView(tv);
+                        }
+
+                        tl.addView(tr, new TableLayout.LayoutParams(
+                                LinearLayout.LayoutParams.FILL_PARENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT));
+//                    }
+
+                    Toast.makeText(ActivityDetail.this, "Data tidak ditemukan", Toast.LENGTH_SHORT).show();
+
+                }else if (flag == 1){
+                    if (counter > 0) {
+                        tl.removeAllViews();
+//                        for (int a = 0; a < counter; a++) {
+//                            for (int b = 0; b < field.length; b++) {
+//                                Log.e("data search", "" + dataSearch[a][b]);
+//                            }
+//                        }
+
+                        TableRow tr_head = new TableRow(ActivityDetail.this);
+                        tr_head.setId(999);
+//                        tr_head.setBackgroundColor(Color.GRAY);
+                        tr_head.setBackgroundColor(ContextCompat.getColor(ActivityDetail.this, R.color.colorPrimary));
+                        tr_head.setLayoutParams(new LinearLayout.LayoutParams(
+                                LinearLayout.LayoutParams.FILL_PARENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                        for(int a=0; a<field.length; a++){
+                            TextView tv = new TextView(ActivityDetail.this);
+                            tv.setId(a);
+                            tv.setText(field[a]);
+                            tv.setTextColor(Color.WHITE);
+                            tv.setTextSize(17);
+                            tv.setTypeface(null, Typeface.BOLD);
+                            tv.setPadding(15, 15, 15, 15);
+                            tr_head.addView(tv);
+                        }
+
+                        tl.addView(tr_head, new TableLayout.LayoutParams(
+                                LinearLayout.LayoutParams.FILL_PARENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                        for(int a=0; a<counter; a++){
+                            TableRow tr = new TableRow(ActivityDetail.this);
+                            if(a%2!=0) tr.setBackgroundColor(Color.GRAY);
+                            tr.setId((field.length+1)+a);
+                            tr.setLayoutParams(new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.FILL_PARENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            for(int b=0; b<dataSearch[a].length; b++){
+                                TextView tv = new TextView(ActivityDetail.this);
+                                tv.setId((field.length+1)+(a+1)+b);
+                                tv.setText(dataSearch[a][b]);
+                                tv.setTextSize(15);
+                                tv.setPadding(18, 5, 15, 5);
+                                if(a%2!=0) {
+                                    tv.setTextColor(Color.WHITE);
+                                }else {
+                                    tv.setTextColor(Color.GRAY);
+                                }
+                                tr.addView(tv);
+                            }
+
+                            tl.addView(tr, new TableLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.FILL_PARENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT));
+                        }
+                    }
+                }
+            }
+        });
 
 //        TableRow tr_head = new TableRow(this);
 //        tr_head.setId(10);
@@ -204,8 +354,8 @@ public class ActivityDetail extends AppCompatActivity {
                 if (response.body() != null) {
                     int success = Objects.requireNonNull(response.body()).getSuccess();
                     if (success == 1) {
-                        String[][] data = response.body().getData();
-                        String[] field = response.body().getField();
+                        data = response.body().getData();
+                        field = response.body().getField();
 
                         pencarian.setVisibility(View.VISIBLE);
                         List<String> arr = new ArrayList<>(Arrays.asList(field));

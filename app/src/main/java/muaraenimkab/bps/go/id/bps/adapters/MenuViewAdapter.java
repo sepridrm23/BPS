@@ -17,7 +17,9 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import muaraenimkab.bps.go.id.bps.activities.ActivityKontak;
 import muaraenimkab.bps.go.id.bps.activities.ActivitySubMenu;
+import muaraenimkab.bps.go.id.bps.activities.ActivityTentang;
 import muaraenimkab.bps.go.id.bps.models.Menu;
 import muaraenimkab.bps.go.id.bps.R;
 import muaraenimkab.bps.go.id.bps.utils.Utilities;
@@ -81,12 +83,18 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.DataOb
 //                    intent.putExtra("flag", String.valueOf(position));
 //                    context.startActivity(intent);
 //                }
-                Intent intent = new Intent(context, ActivitySubMenu.class);
-                intent.putExtra("id", String.valueOf(mList.get(position).getId()));
-                intent.putExtra("name", String.valueOf(mList.get(position).getNama()));
-                context.startActivity(intent);
-
-
+                if (mList.get(position).getId().equals("00")){
+                    Intent intent = new Intent(context, ActivityKontak.class);
+                    context.startActivity(intent);
+                }else if (mList.get(position).getId().equals("000")){
+                    Intent intent = new Intent(context, ActivityTentang.class);
+                    context.startActivity(intent);
+                }else {
+                    Intent intent = new Intent(context, ActivitySubMenu.class);
+                    intent.putExtra("id", String.valueOf(mList.get(position).getId()));
+                    intent.putExtra("name", String.valueOf(mList.get(position).getNama()));
+                    context.startActivity(intent);
+                }
             }
         });
 
