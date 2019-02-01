@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:id="@+id/rLayout"
+        android:id="@+id/rLayoutData"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone">
@@ -33,10 +33,39 @@
         </LinearLayout>
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/rLayoutInternet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables,UselessParent">
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/sad"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tidak terhubung ke Internet"
+                android:textColor="@android:color/darker_gray" />
+        </LinearLayout>
+    </RelativeLayout>
+
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/lLayout"
+        android:layout_above="@+id/rLayoutDonlot"
         android:background="@color/colorWhite">
         <LinearLayout
             android:layout_height="match_parent"
@@ -81,6 +110,7 @@
                 android:id="@+id/pencarian"
                 android:padding="10dp"
                 android:layout_margin="15dp"
+                android:visibility="gone"
                 android:background="@drawable/custom_frame">
                 <Spinner
                     android:id="@+id/spinner"
@@ -102,10 +132,11 @@
                     android:textAllCaps="false"/>
             </LinearLayout>
             <HorizontalScrollView
-                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                tools:ignore="UselessParent">
+                tools:ignore="UselessParent"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp">
                 <TableLayout
                     android:stretchColumns="0,1"
                     android:id="@+id/main_table"
@@ -117,6 +148,35 @@
             </HorizontalScrollView>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rLayoutDonlot"
+        android:background="@color/colorWhite"
+        android:layout_alignParentBottom="true">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorDivider"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
+        <Button
+            android:id="@+id/btnDonlot"
+            android:text="Unduh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"
+            tools:ignore="UnusedAttribute"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:visibility="gone"/>
+    </RelativeLayout>
 </RelativeLayout>
 
 <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->

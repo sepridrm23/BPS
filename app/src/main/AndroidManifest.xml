@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -27,9 +29,17 @@
         </activity>
         <activity android:name=".activities.MainActivity">
         </activity>
-        <activity android:name=".activities.ActivitySubMenu">
+        <activity
+            android:name=".activities.ActivitySubMenu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.ActivitySubMenu" />
         </activity>
-        <activity android:name=".activities.ActivityKontak">
+        <activity
+            android:name=".activities.ActivityKontak">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.ActivityKontak" />
         </activity>
         <activity android:name=".activities.ActivityTentang"
             android:theme="@style/AppTheme.NoActionBar">
@@ -48,6 +58,15 @@
         </activity>
         <activity
             android:name=".activities.ActivityDetail">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.ActivityDetail" />
+        </activity>
+        <activity
+            android:name=".activities.SearchActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.SearchActivity" />
         </activity>
     </application>
 

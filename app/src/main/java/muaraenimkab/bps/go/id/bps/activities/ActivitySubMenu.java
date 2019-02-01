@@ -11,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -31,6 +33,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ActivitySubMenu extends AppCompatActivity {
     RecyclerView rView;
     LinearLayoutManager linearLayoutManager;
+    RelativeLayout rlNodata, rlNoInternet;
 //    ArrayList<Models> aList;
 //    Models[] data;
     String id, name;
@@ -40,6 +43,9 @@ public class ActivitySubMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submenu);
         rView = findViewById(R.id.recycler_view);
+
+        rlNodata = findViewById(R.id.rLayoutData);
+        rlNoInternet = findViewById(R.id.rLayoutInternet);
 
         id = getIntent().getStringExtra("id");
         name = getIntent().getStringExtra("name");
@@ -237,18 +243,27 @@ public class ActivitySubMenu extends AppCompatActivity {
                     if (success == 1) {
                         ArrayList<Menu> data = (ArrayList<Menu>) Objects.requireNonNull(response.body()).getData();
 
-                        rView.addItemDecoration(new DividerItemDecoration(ActivitySubMenu.this, LinearLayoutManager.VERTICAL));
-                        linearLayoutManager = new LinearLayoutManager(ActivitySubMenu.this);
-                        rView.setLayoutManager(linearLayoutManager);
-                        SubMenuViewAdapter laporanViewAdapter = new SubMenuViewAdapter(ActivitySubMenu.this, data);
-                        rView.setAdapter(laporanViewAdapter);
+                        if (data.size() == 0){
+                            rlNoInternet.setVisibility(View.GONE);
+                            rlNodata.setVisibility(View.VISIBLE);
+                        }else {
+                            rView.addItemDecoration(new DividerItemDecoration(ActivitySubMenu.this, LinearLayoutManager.VERTICAL));
+                            linearLayoutManager = new LinearLayoutManager(ActivitySubMenu.this);
+                            rView.setLayoutManager(linearLayoutManager);
+                            SubMenuViewAdapter laporanViewAdapter = new SubMenuViewAdapter(ActivitySubMenu.this, data);
+                            rView.setAdapter(laporanViewAdapter);
+                        }
                         pDialog.dismiss();
                     }else {
+                        rlNoInternet.setVisibility(View.GONE);
+                        rlNodata.setVisibility(View.VISIBLE);
                         Snackbar.make(ActivitySubMenu.this.findViewById(android.R.id.content), "Gagal mengambil data. Silahkan coba lagi"+response.body().getMessage(),
                                 Snackbar.LENGTH_LONG).show();
                         pDialog.dismiss();
                     }
                 }else {
+                    rlNoInternet.setVisibility(View.GONE);
+                    rlNodata.setVisibility(View.VISIBLE);
                     Snackbar.make(ActivitySubMenu.this.findViewById(android.R.id.content), "Gagal mengambil data. Silahkan coba lagi",
                             Snackbar.LENGTH_LONG).show();
                     pDialog.dismiss();
@@ -259,6 +274,8 @@ public class ActivitySubMenu extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Call<Value<Menu>> call, @NonNull Throwable t) {
                 System.out.println("Retrofit Error:" + t.getMessage());
+                rlNoInternet.setVisibility(View.VISIBLE);
+                rlNodata.setVisibility(View.GONE);
                 Snackbar.make(ActivitySubMenu.this.findViewById(android.R.id.content), "Tidak terhubung ke Internet",
                         Snackbar.LENGTH_LONG).show();
                 pDialog.dismiss();

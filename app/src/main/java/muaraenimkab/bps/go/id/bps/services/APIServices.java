@@ -24,6 +24,11 @@ public interface APIServices {
                                  @Field("subid") String subid);
 
     @FormUrlEncoded
+    @POST("getsearchsubmenu.php")
+    Call<Value<Menu>> getsearchsubmenu(@Field("xkey") String xkey,
+                                 @Field("search") String search);
+
+    @FormUrlEncoded
     @POST("getdetail.php")
     Call<ValueArr> getdetail(@Field("xkey") String xkey,
                              @Field("id") String id);

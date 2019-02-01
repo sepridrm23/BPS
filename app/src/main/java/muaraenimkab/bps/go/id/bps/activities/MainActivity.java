@@ -1,17 +1,29 @@
 package muaraenimkab.bps.go.id.bps.activities;
 
 import android.app.ProgressDialog;
+import android.app.SearchManager;
+import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.util.DisplayMetrics;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,9 +46,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
 //    CardView cvSosial, cvEkonomi, cvPertanian, cvIndikator, cvPublikasi, cvBeritaStatistik, cvBerita, cvKontak, cvTentang;
 
+    RelativeLayout rlNodata, rlNoInternet;
     RecyclerView rView;
-    ArrayList<Models> aList;
-    Models[] data;
+//    ArrayList<Models> aList;
+//    Models[] data;
 
     float dpWidth;
 
@@ -44,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        rlNodata = findViewById(R.id.rLayoutData);
+        rlNoInternet = findViewById(R.id.rLayoutInternet);
 
         rView = findViewById(R.id.recycler_view);
 
@@ -185,6 +200,65 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        getMenuInflater().inflate(R.menu.item_search, menu);
+        final MenuItem searchItem = menu.findItem(R.id.action_search);
+
+        for(int i = 0; i < menu.size(); i++){
+            Drawable drawable = menu.getItem(i).getIcon();
+            if(drawable != null) {
+                drawable.mutate();
+                drawable.setColorFilter(getResources().getColor(R.color.colorWhite), PorterDuff.Mode.SRC_ATOP);
+            }
+        }
+
+        if (searchItem != null) {
+            SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+            searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+                @Override
+                public boolean onClose() {
+                    return false;
+                }
+            });
+
+            searchView.setOnSearchClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //some operation
+                }
+            });
+
+            EditText searchPlate = searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+            searchPlate.setHint("Cari");
+            View searchPlateView = searchView.findViewById(android.support.v7.appcompat.R.id.search_plate);
+            searchPlateView.setBackgroundColor(ContextCompat.getColor(this, android.R.color.transparent));
+            // use this method for search process
+            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    // use this method when query submitted
+                    if (!query.isEmpty()){
+                        Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                        intent.putExtra("search", query);
+                        startActivity(intent);
+                    }
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String newText) {
+                    // use this method for auto complete search process
+                    return false;
+                }
+            });
+            SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+
+        }
+        return super.onCreateOptionsMenu(menu);
+    }
+
     private void getMenu() {
 
         final ProgressDialog pDialog = new ProgressDialog(this);
@@ -214,19 +288,30 @@ public class MainActivity extends AppCompatActivity {
                     if (success == 1) {
                         ArrayList<Menu> data = (ArrayList<Menu>) Objects.requireNonNull(response.body()).getData();
 
-                        int noOfColumns = (int) (dpWidth / 120);
-                        rView.setHasFixedSize(true);
-                        rView.setLayoutManager(new GridLayoutManager(MainActivity.this, noOfColumns));
-                        MenuViewAdapter rcAdapter = new MenuViewAdapter(MainActivity.this, data);
-                        rView.setAdapter(rcAdapter);
+                        if (data.size() == 0){
+                            rlNodata.setVisibility(View.VISIBLE);
+                            rlNoInternet.setVisibility(View.GONE);
+                        }else {
+                            rlNodata.setVisibility(View.GONE);
+                            rlNoInternet.setVisibility(View.GONE);
+                            int noOfColumns = (int) (dpWidth / 120);
+                            rView.setHasFixedSize(true);
+                            rView.setLayoutManager(new GridLayoutManager(MainActivity.this, noOfColumns));
+                            MenuViewAdapter rcAdapter = new MenuViewAdapter(MainActivity.this, data);
+                            rView.setAdapter(rcAdapter);
+                        }
                         pDialog.dismiss();
                     }else {
+                        rlNodata.setVisibility(View.VISIBLE);
+                        rlNoInternet.setVisibility(View.GONE);
                         Snackbar.make(MainActivity.this.findViewById(android.R.id.content), "Gagal mengambil data. Silahkan coba lagi"+response.body().getMessage(),
                                 Snackbar.LENGTH_LONG).show();
                         pDialog.dismiss();
                     }
                 }else {
-                    Snackbar.make(MainActivity.this.findViewById(android.R.id.content), "gagal mengambil data. Silahkan coba lagi",
+                    rlNodata.setVisibility(View.VISIBLE);
+                    rlNoInternet.setVisibility(View.GONE);
+                    Snackbar.make(MainActivity.this.findViewById(android.R.id.content), "Gagal mengambil data. Silahkan coba lagi",
                             Snackbar.LENGTH_LONG).show();
                     pDialog.dismiss();
                 }
@@ -236,6 +321,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Call<Value<Menu>> call, @NonNull Throwable t) {
                 System.out.println("Retrofit Error:" + t.getMessage());
+                rlNodata.setVisibility(View.GONE);
+                rlNoInternet.setVisibility(View.VISIBLE);
                 Snackbar.make(MainActivity.this.findViewById(android.R.id.content), "Tidak terhubung ke Internet",
                         Snackbar.LENGTH_LONG).show();
                 pDialog.dismiss();
