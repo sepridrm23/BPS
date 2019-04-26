@@ -67,7 +67,7 @@ public class ActivityDetail extends AppCompatActivity {
         AnyChartView anyChartView = findViewById(R.id.any_chart_view);
         TextView tvDiagram = findViewById(R.id.diagram);
         TextView tvTabel = findViewById(R.id.tabel);
-        rLayout = findViewById(R.id.rLayout);
+        rLayout = findViewById(R.id.rLayoutData);
         lLayout = findViewById(R.id.lLayout);
         pencarian=findViewById(R.id.pencarian);
 
