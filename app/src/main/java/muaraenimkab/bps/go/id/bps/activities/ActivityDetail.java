@@ -414,65 +414,75 @@ public class ActivityDetail extends AppCompatActivity {
                         data = response.body().getData();
                         field = response.body().getField();
 
-                        List<String> arr = new ArrayList<>(Arrays.asList(field));
-                        ArrayAdapter<String> adapter = new ArrayAdapter<>(ActivityDetail.this, android.R.layout.simple_spinner_dropdown_item, arr);
-                        spinner.setAdapter(adapter);
+                        if (data.length > 0 && field.length > 0) {
+                            List<String> arr = new ArrayList<>(Arrays.asList(field));
+                            ArrayAdapter<String> adapter = new ArrayAdapter<>(ActivityDetail.this, android.R.layout.simple_spinner_dropdown_item, arr);
+                            spinner.setAdapter(adapter);
 
-                        TableRow tr_head = new TableRow(ActivityDetail.this);
-                        tr_head.setId(999);
-//                        tr_head.setBackgroundColor(Color.GRAY);
-                        tr_head.setBackgroundColor(ContextCompat.getColor(ActivityDetail.this, R.color.colorPrimary));
-                        tr_head.setLayoutParams(new LinearLayout.LayoutParams(
-                                LinearLayout.LayoutParams.FILL_PARENT,
-                                LinearLayout.LayoutParams.WRAP_CONTENT));
-
-                        for(int a=0; a<field.length; a++){
-                            TextView tv = new TextView(ActivityDetail.this);
-                            tv.setId(a);
-                            tv.setText(field[a]);
-                            tv.setTextColor(Color.WHITE);
-                            tv.setTextSize(17);
-                            tv.setTypeface(null, Typeface.BOLD);
-                            tv.setPadding(15, 15, 15, 15);
-                            tr_head.addView(tv);
-                        }
-
-                        tl.addView(tr_head, new TableLayout.LayoutParams(
-                                LinearLayout.LayoutParams.FILL_PARENT,
-                                LinearLayout.LayoutParams.WRAP_CONTENT));
-
-                        for(int a=0; a<data.length; a++){
-                            TableRow tr = new TableRow(ActivityDetail.this);
-                            if(a%2!=0) tr.setBackgroundColor(Color.GRAY);
-                            tr.setId((field.length+1)+a);
-                            tr.setLayoutParams(new LinearLayout.LayoutParams(
+                            TableRow tr_head = new TableRow(ActivityDetail.this);
+                            tr_head.setId(999);
+                            //                        tr_head.setBackgroundColor(Color.GRAY);
+                            tr_head.setBackgroundColor(ContextCompat.getColor(ActivityDetail.this, R.color.colorPrimary));
+                            tr_head.setLayoutParams(new LinearLayout.LayoutParams(
                                     LinearLayout.LayoutParams.FILL_PARENT,
                                     LinearLayout.LayoutParams.WRAP_CONTENT));
 
-                            for(int b=0; b<data[a].length; b++){
+                            for (int a = 0; a < field.length; a++) {
                                 TextView tv = new TextView(ActivityDetail.this);
-                                tv.setId((field.length+1)+(a+1)+b);
-                                tv.setText(data[a][b]);
-                                tv.setTextSize(15);
-                                tv.setPadding(18, 5, 15, 5);
-                                if(a%2!=0) {
-                                    tv.setTextColor(Color.WHITE);
-                                }else {
-                                    tv.setTextColor(Color.GRAY);
-                                }
-                                tr.addView(tv);
+                                tv.setId(a);
+                                tv.setText(field[a]);
+                                tv.setTextColor(Color.WHITE);
+                                tv.setTextSize(17);
+                                tv.setTypeface(null, Typeface.BOLD);
+                                tv.setPadding(15, 15, 15, 15);
+                                tr_head.addView(tv);
                             }
 
-                            tl.addView(tr, new TableLayout.LayoutParams(
+                            tl.addView(tr_head, new TableLayout.LayoutParams(
                                     LinearLayout.LayoutParams.FILL_PARENT,
                                     LinearLayout.LayoutParams.WRAP_CONTENT));
-                        }
 
-                        rLayoutData.setVisibility(View.GONE);
-                        rLayoutInternet.setVisibility(View.GONE);
-                        lLayout.setVisibility(View.VISIBLE);
-                        pencarian.setVisibility(View.VISIBLE);
-                        btnDonlot.setVisibility(View.VISIBLE);
+                            for (int a = 0; a < data.length; a++) {
+                                TableRow tr = new TableRow(ActivityDetail.this);
+                                if (a % 2 != 0) tr.setBackgroundColor(Color.GRAY);
+                                tr.setId((field.length + 1) + a);
+                                tr.setLayoutParams(new LinearLayout.LayoutParams(
+                                        LinearLayout.LayoutParams.FILL_PARENT,
+                                        LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                                for (int b = 0; b < data[a].length; b++) {
+                                    TextView tv = new TextView(ActivityDetail.this);
+                                    tv.setId((field.length + 1) + (a + 1) + b);
+                                    tv.setText(data[a][b]);
+                                    tv.setTextSize(15);
+                                    tv.setPadding(18, 5, 15, 5);
+                                    if (a % 2 != 0) {
+                                        tv.setTextColor(Color.WHITE);
+                                    } else {
+                                        tv.setTextColor(Color.GRAY);
+                                    }
+                                    tr.addView(tv);
+                                }
+
+                                tl.addView(tr, new TableLayout.LayoutParams(
+                                        LinearLayout.LayoutParams.FILL_PARENT,
+                                        LinearLayout.LayoutParams.WRAP_CONTENT));
+                            }
+
+                            rLayoutData.setVisibility(View.GONE);
+                            rLayoutInternet.setVisibility(View.GONE);
+                            lLayout.setVisibility(View.VISIBLE);
+                            pencarian.setVisibility(View.VISIBLE);
+                            btnDonlot.setVisibility(View.VISIBLE);
+                        }else {
+                            rLayoutData.setVisibility(View.VISIBLE);
+                            rLayoutInternet.setVisibility(View.GONE);
+                            lLayout.setVisibility(View.GONE);
+                            pencarian.setVisibility(View.GONE);
+                            btnDonlot.setVisibility(View.GONE);
+                            Snackbar.make(ActivityDetail.this.findViewById(android.R.id.content), "Data belum tersedia",
+                                    Snackbar.LENGTH_LONG).show();
+                        }
                         pDialog.dismiss();
                     }else if(success == 2){
                         rLayoutData.setVisibility(View.VISIBLE);

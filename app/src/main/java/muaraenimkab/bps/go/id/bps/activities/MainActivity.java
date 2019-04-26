@@ -17,6 +17,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -321,6 +322,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Call<Value<Menu>> call, @NonNull Throwable t) {
                 System.out.println("Retrofit Error:" + t.getMessage());
+//                Toast.makeText(MainActivity.this, ""+t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("retrofit", ""+t.getMessage());
                 rlNodata.setVisibility(View.GONE);
                 rlNoInternet.setVisibility(View.VISIBLE);
                 Snackbar.make(MainActivity.this.findViewById(android.R.id.content), "Tidak terhubung ke Internet",
