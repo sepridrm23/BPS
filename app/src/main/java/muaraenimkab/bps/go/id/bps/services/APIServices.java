@@ -32,6 +32,13 @@ public interface APIServices {
     @POST("getdetail.php")
     Call<ValueArr> getdetail(@Field("xkey") String xkey,
                              @Field("id") String id);
+
+    @FormUrlEncoded
+    @POST("getpencarian.php")
+    Call<ValueArr> getpencarian(@Field("xkey") String xkey,
+                                @Field("id") String id,
+                                @Field("spinner") String spinner,
+                                @Field("edittext") String edittext);
 //
 //    @FormUrlEncoded
 //    @POST("getdatapemerintahan.php")
