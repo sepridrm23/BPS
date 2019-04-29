@@ -28,22 +28,23 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_muaraenim"
+            android:src="@drawable/logo_simada"
             tools:ignore="ContentDescription" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Muara Enim dalam Angka"
-            android:layout_marginTop="20dp"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
+
         <!--<TextView-->
             <!--android:layout_width="wrap_content"-->
             <!--android:layout_height="wrap_content"-->
-            <!--android:text="Dalam Angka"-->
-            <!--android:textSize="20sp"-->
-            <!--android:textStyle="bold"/>-->
+            <!--android:text="Muara Enim dalam Angka"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:textSize="25sp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textAlignment="center"/>-->
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Dalam Angka"-->
+        <!--android:textSize="20sp"-->
+        <!--android:textStyle="bold"/>-->
     </LinearLayout>
 
     <TextView
@@ -54,5 +55,4 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:textColor="@color/colorPrimary" />
-
 </RelativeLayout>
